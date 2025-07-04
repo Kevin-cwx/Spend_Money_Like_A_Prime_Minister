@@ -1,80 +1,100 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>💸Gasta sen mane prome minister</title>
+    <link rel="icon" type="image/x-icon" href="/Media/Favicon/a.ico" />
 
-<head>
-  <title>💸Gasta sen mane prome minister</title>
-  <link rel="icon" type="image/x-icon" href="/Media/Favicon/a.ico">
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/Styles/MyStyleSheet.css" />
+    <link rel="stylesheet" href="/Styles/Sticky_Top_Bar.css" />
+    <link rel="stylesheet" href="/Styles/Items.css" />
 
-  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/Styles/MyStyleSheet.css">
-  <link rel="stylesheet" href="/Styles/Sticky_Top_Bar.css">
-    <link rel="stylesheet" href="/Styles/Items.css">
+    <link href="https://fonts.cdnfonts.com/css/eqpro-bold" rel="stylesheet" />
+  </head>
 
+  <body>
+    <div class="MainWrapper">
+      <a
+        href="https://api.whatsapp.com/send?phone=19186006427&text=Hi mi ta interesa den hasi propaganda riba boso pagina. Esaki ta mi negoshi"
+      >
+        Advertise with us. (12K daily views)
+      </a>
 
-
-  <link href="https://fonts.cdnfonts.com/css/eqpro-bold" rel="stylesheet">
-</head>
-
-
-<body>
-  <div class="MainWrapper">
-    <a
-      href="https://api.whatsapp.com/send?phone=19186006427&text=Hi mi ta interesa den hasi propaganda riba boso pagina. Esaki ta mi negoshi">
-      Advertise with us. (12K daily views)
-    </a>
-
-    <div class="sticky-header" id="stickyHeader">
-      <img class="sticky-pm-face" id="stickyPmFace" />
-      <div class="sticky-currency">XCG <span id="stickyWalletAmount"></span></div>
+      <div class="sticky-header" id="stickyHeader">
+        <img class="sticky-pm-face" id="stickyPmFace" />
+        <div class="sticky-currency">
+          XCG <span id="stickyWalletAmount"></span>
+        </div>
       </div>
 
-    <div id="StickyPMBar" style="display:none;">
-      <img id="StickyPMImage" class="StickyPMFace" src="" alt="PM Face" />
-      <span id="StickyPMAmount" class="StickyCurrencyAmount"></span>
-    </div>
+      <div id="StickyPMBar" style="display: none">
+        <img id="StickyPMImage" class="StickyPMFace" src="" alt="PM Face" />
+        <span id="StickyPMAmount" class="StickyCurrencyAmount"></span>
+      </div>
 
-    <div class="ChoosePrimeMinisterCard">
-      <div class="ChoosePrimeMinisterTitle">Kies un hende su potmoni</div>
-      <div class="AllPMCards">
-        <div class="PMCard" id="PMCard_1" onclick="SelectPM(1)">
-          <img class="PrimeMinisterFaceCard " id="ImagePrimeMinister_1" />
-          <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_1"></div>
-          <span class="CurrencyAmmount">XCG <span id="WalletAmmount_1"></span></span>
+      <div class="ChoosePrimeMinisterCard">
+        <div class="ChoosePrimeMinisterTitle">Kies un hende su potmoni</div>
+        <div class="AllPMCards">
+          <div class="PMCard" id="PMCard_1" onclick="SelectPM(1)">
+            <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_1" />
+            <div
+              class="ClassNamePrimeMinister"
+              id="IDNamePrimeMinister_1"
+            ></div>
+            <span class="CurrencyAmmount"
+              >XCG <span id="WalletAmmount_1"></span
+            ></span>
+          </div>
+
+          <div class="PMCard" id="PMCard_2" onclick="SelectPM(2)">
+            <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_2" />
+            <div
+              class="ClassNamePrimeMinister"
+              id="IDNamePrimeMinister_2"
+            ></div>
+            <span class="CurrencyAmmount"
+              >XCG <span id="WalletAmmount_2"></span
+            ></span>
+          </div>
+
+          <div class="PMCard" id="PMCard_3" onclick="SelectPM(3)">
+            <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_3" />
+            <div
+              class="ClassNamePrimeMinister"
+              id="IDNamePrimeMinister_3"
+            ></div>
+            <span class="CurrencyAmmount"
+              >XCG <span id="WalletAmmount_3"></span
+            ></span>
+          </div>
+
+          <div class="PMCard" id="PMCard_4" onclick="SelectPM(4)">
+            <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_4" />
+            <div
+              class="ClassNamePrimeMinister"
+              id="IDNamePrimeMinister_4"
+            ></div>
+            <span class="CurrencyAmmount"
+              >XCG <span id="WalletAmmount_4"></span
+            ></span>
+          </div>
         </div>
+      </div>
 
-        <div class="PMCard" id="PMCard_2" onclick="SelectPM(2)">
-          <img class="PrimeMinisterFaceCard " id="ImagePrimeMinister_2" />
-          <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_2"></div>
-          <span class="CurrencyAmmount">XCG <span id="WalletAmmount_2"></span></span>
+      <div class="ChooseItemsCard">
+        <div class="ParentItemCard">
+          <!-- Items will be populated dynamically -->
         </div>
-
-        <div class="PMCard" id="PMCard_3" onclick="SelectPM(3)">
-          <img class="PrimeMinisterFaceCard " id="ImagePrimeMinister_3" />
-          <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_3"></div>
-          <span class="CurrencyAmmount">XCG <span id="WalletAmmount_3"></span></span>
-        </div>
-
-        <div class="PMCard" id="PMCard_4" onclick="SelectPM(4)">
-          <img class="PrimeMinisterFaceCard " id="ImagePrimeMinister_4" />
-          <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_4"></div>
-          <span class="CurrencyAmmount">XCG <span id="WalletAmmount_4"></span></span>
-        </div>
-
       </div>
     </div>
-
-    <div class="ChooseItemsCard">
-      <div class="ParentItemCard">
-        <!-- Items will be populated dynamically -->
-      </div>
-    </div>
-  </div>
-  <script src="/Scripts/MainScript.js"></script>
-  <script src="/Scripts/Sticky_Top_Bar.js"></script>
-  <script src="/Scripts/Items.js"></script>
-
-
-</body>
-
+    <script src="/Scripts/MainScript.js"></script>
+    <script src="/Scripts/Sticky_Top_Bar.js"></script>
+    <script src="/Scripts/Items_Data.js"></script>
+    <script src="/Scripts/Items.js"></script>
+    
+  </body>
 </html>

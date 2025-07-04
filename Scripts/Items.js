@@ -1,35 +1,4 @@
-var Items_JSON = [
-
-    {
-        Item_Name: "Double Cheese Burger",
-        Item_Price: "14.20",
-        Img_Url: "/Media/ItemPictures/Burger.png"
-    },
-    {
-        Item_Name: "Pastechi di keshi",
-        Item_Price: "2.50",
-        Img_Url: "/Media/ItemPictures/Pastechi.png"
-    },
-    {
-        Item_Name: "Roasted Bone Marrow",
-        Item_Price: "133",
-        Img_Url: "/Media/ItemPictures/BoneMarrow.png"
-    },
-    {
-        Item_Name: "Salt Bae's Steak",
-        Item_Price: "155",
-        Img_Url: "/Media/ItemPictures/SaltBae.png"
-    },
-    {
-        Item_Name: "",
-        Item_Price: "",
-        Img_Url: "/Media/ItemPictures/.png"
-    },
-];
-
-var selectedPMIndex = null;
-var currentWalletAmount = 0;
-
+var selectedPMIndex;
 
 for (var i = 0; i < Items_JSON.length; i++) {
 
@@ -56,7 +25,7 @@ function initializeItems() {
                     <div id="ItemPrice_${i}" class="ItemPriceClass"></div>
                 </div>
                 <div class="ChildItemcard">
-                    <input type="number" class="ItemCountInputClass" id="ItemCountInput_${i}" min="1" value="1">
+                    <input type="number" class="ItemCountInputClass" id="ItemCountInput_${i}" min="0" value="0">
                     <button class="BuyItemBtnClass" onclick="buyItem(${i})">BUY</button>
                 </div>
                 <div class="BottomSelectAmmountBtn">
@@ -74,6 +43,7 @@ function initializeItems() {
     }
 }
 
+initializeItems();
 // Set amount in input field
 function selectAmountBtn(itemIndex, amount) {
     $("#ItemCountInput_" + itemIndex).val(amount);
@@ -99,7 +69,7 @@ function buyItem(itemIndex) {
 function animateWalletDecrease(amount) {
     const startAmount = currentWalletAmount;
     const endAmount = currentWalletAmount - amount;
-    const duration = 1000; // 1 second
+    const duration = 1000; 
     const startTime = performance.now();
     
     function updateAmount(currentTime) {
@@ -108,7 +78,7 @@ function animateWalletDecrease(amount) {
         const currentValue = startAmount - (amount * progress);
         
         // Update display with formatted number
-        currentWalletAmount = Math.max(0, Math.floor(currentValue));
+         currentWalletAmount = Math.max(0, parseFloat(currentValue.toFixed(2)));
         updateWalletDisplay();
         
         if (progress < 1) {
@@ -116,7 +86,7 @@ function animateWalletDecrease(amount) {
         } else {
             currentWalletAmount = endAmount;
             updateWalletDisplay();
-            updatePMWalletInJSON();
+        
         }
     }
     
@@ -125,11 +95,7 @@ function animateWalletDecrease(amount) {
 
 // Update wallet display in UI
 function updateWalletDisplay() {
+    const formatted = numberWithCommas(currentWalletAmount.toFixed(2));
     $('#stickyWalletAmount').text(numberWithCommas(currentWalletAmount));
     $(`#WalletAmmount_${selectedPMIndex + 1}`).text(numberWithCommas(currentWalletAmount));
-}
-
-// Update the JSON data with new wallet amount
-function updatePMWalletInJSON() {
-    JSON_PM[selectedPMIndex].wallet_amount = currentWalletAmount;
 }
