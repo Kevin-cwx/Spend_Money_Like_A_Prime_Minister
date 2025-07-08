@@ -4,3 +4,4 @@
 [] Fix sticky money shifting image
 [] Make mobile friendly
 [] Item name - always fit on one line
+[] Add credit card animation when PM is selected

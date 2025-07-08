@@ -36,6 +36,7 @@ function selectAmountBtn(itemIndex, amount) {
     $("#ItemCountInput_" + itemIndex).val(amount);
 }
 
+Arr_Purchases = [];
 // Buy item function
 function buyItem(itemIndex) {
     if (selectedPMIndex == null) { 
@@ -60,6 +61,13 @@ function buyItem(itemIndex) {
 
     if (currentWalletAmount >= totalCost) {
         animateWalletDecrease(totalCost);
+        Arr_Purchases.push({
+            
+            Item_Name: Items_JSON[itemIndex].Item_Name,
+            Quantity: quantity,
+            UnitPrice: itemPrice,
+            TotalCost: totalCost
+        });
     } else {
         showToast("Not enough money in your wallet🥺", "error");
     }
@@ -69,7 +77,7 @@ function buyItem(itemIndex) {
 function animateWalletDecrease(amount) {
     const startAmount = currentWalletAmount;
     const endAmount = currentWalletAmount - amount;
-    const duration = 1000; 
+    const duration = 1600; 
     const startTime = performance.now();
     
     function updateAmount(currentTime) {
