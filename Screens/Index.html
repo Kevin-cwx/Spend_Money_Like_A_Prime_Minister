@@ -14,11 +14,80 @@
     <link rel="stylesheet" href="/Styles/Items.css" />
     <link rel="stylesheet" href="/Styles/Toast.css" />
     <link rel="stylesheet" href="/Styles/Print_Receipt.css" />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 
     <link href="https://fonts.cdnfonts.com/css/eqpro-bold" rel="stylesheet" />
   </head>
 
   <body>
+    <div
+      id="receiptModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 9999;
+      "
+    >
+      <div
+        style="
+          background: white;
+          max-width: 500px;
+          margin: 50px auto;
+          padding: 20px;
+          position: relative;
+        "
+      >
+        <!-- Close Button -->
+        <button
+          id="closeModal"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background: none;
+            font-size: 18px;
+          "
+        >
+          ✕
+        </button>
+
+        <!-- Receipt Image Placeholder -->
+        <div
+          class="center"
+          style="margin-top: 40px"
+          id="modalReceiptImage"
+        ></div>
+        <div id="output"></div>
+        <div id="receipt" class="receipt template1"></div>
+
+        <!-- Button Grid -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+          "
+        >
+          <button id="btnContinue" style="flex: 1; margin-right: 10px">
+            Continue Shopping
+          </button>
+          <button id="btnWallet" style="flex: 1">Pick a New Wallet</button>
+        </div>
+
+        <!-- Save Button -->
+        <div class="center" style="margin-top: 20px">
+          <button id="saveImage">Save Image</button>
+        </div>
+      </div>
+    </div>
+
     <div class="MainWrapper">
       <a
         href="https://api.whatsapp.com/send?phone=19186006427&text=Hi mi ta interesa den hasi propaganda riba boso pagina. Esaki ta mi negoshi"

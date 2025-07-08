@@ -12,3 +12,101 @@
         transition: background-color 0.2s ease, transform 0.1s ease;
         margin-left: 30px;
 }
+
+body {
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+
+        .receipt {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 5px #ccc;
+            margin: 0 auto;
+            white-space: pre-wrap;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .barcode-container {
+            margin-top: 20px;
+        }
+
+        .template1 .store-name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .template2 .store-name {
+            font-style: italic;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .template3 .store-name {
+            font-size: 22px;
+            border-bottom: 2px dashed #000;
+            padding-bottom: 5px;
+        }
+
+        .line {
+            border-top: 1px dashed #000;
+            margin: 10px 0;
+        }
+
+        #output img {
+            margin-top: 20px;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Courier New', monospace;
+            padding: 2px 0;
+        }
+
+        .summary-label {
+            /* Left side */
+        }
+
+        .summary-value {
+            /* Right align price values */
+            text-align: right;
+            min-width: 80px;
+            /* Adjust width to align all values */
+            font-variant-numeric: tabular-nums;
+            /* Monospaced numbers */
+        }
+
+        .item-line {
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+        }
+
+        .visa-line {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Courier New', monospace;
+            padding: 2px 0;
+        }
+
+        .visa-label {
+            /* Left */
+        }
+
+        .visa-value {
+            text-align: right;
+            min-width: 80px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .store-logo {
+    display: block;
+    margin: 0 auto 10px auto;
+    max-width: 150px; /* Adjust size as needed */
+    height: auto;
+}
