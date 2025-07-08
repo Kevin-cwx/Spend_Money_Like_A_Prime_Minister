@@ -1,10 +1,10 @@
 var selectedPMIndex;
 
 function initializeItems() {
-    $(".ParentItemCard").empty();
-    
-    for (var i = 0; i < Items_JSON.length; i++) {
-        $(".ParentItemCard").append(`
+  $(".ParentItemCard").empty();
+
+  for (var i = 0; i < Items_JSON.length; i++) {
+    $(".ParentItemCard").append(`
             <div class="ItemCard">
                 <img class="ItemImage" id="ItemImageID_${i}">
                 <div class="FirstChildItemcard">
@@ -23,88 +23,96 @@ function initializeItems() {
                 </div>
             </div>
         `);
-        
-        $("#ItemName_" + i).text(Items_JSON[i]['Item_Name']);
-        $("#ItemPrice_" + i).text("XCG " + numberWithCommas(parseFloat(Items_JSON[i]['Item_Price']).toFixed(2)));
-        $("#ItemImageID_" + i).attr("src", Items_JSON[i]['Img_Url']);
-    }
+
+    $("#ItemName_" + i).text(Items_JSON[i]["Item_Name"]);
+    $("#ItemPrice_" + i).text(
+      "XCG " +
+        numberWithCommas(parseFloat(Items_JSON[i]["Item_Price"]).toFixed(2))
+    );
+    $("#ItemImageID_" + i).attr("src", Items_JSON[i]["Img_Url"]);
+  }
 }
 
 initializeItems();
 // Set amount in input field
 function selectAmountBtn(itemIndex, amount) {
-    $("#ItemCountInput_" + itemIndex).val(amount);
+  $("#ItemCountInput_" + itemIndex).val(amount);
 }
 
 Arr_Purchases = [];
 // Buy item function
 function buyItem(itemIndex) {
-    if (selectedPMIndex == null) { 
-        showToast("Please select a Prime Minister first", "error");
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-        return;
-    }
-        
-    const inputSelector = "#ItemCountInput_" + itemIndex;
-    const quantityVal = $(inputSelector).val();
+  if (selectedPMIndex == null) {
+    showToast("Please select a Prime Minister first", "error");
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return;
+  }
 
-    const quantity = parseInt(quantityVal, 10);
+  const inputSelector = "#ItemCountInput_" + itemIndex;
+  const quantityVal = $(inputSelector).val();
 
-    // // Highlighted Fix: check if quantity is a valid number and positive
-    // if (isNaN(quantity) || quantity <= 0) {
-    //     showToast("Not enough money", "error");
-    //     return;
-    // }
+  const quantity = parseInt(quantityVal, 10);
 
-    const itemPrice = parseFloat(Items_JSON[itemIndex].Item_Price);
-    const totalCost = itemPrice * quantity;
+  // // Highlighted Fix: check if quantity is a valid number and positive
+  // if (isNaN(quantity) || quantity <= 0) {
+  //     showToast("Not enough money", "error");
+  //     return;
+  // }
 
-    if (currentWalletAmount >= totalCost) {
-        animateWalletDecrease(totalCost);
-        Arr_Purchases.push({
-            
-            Item_Name: Items_JSON[itemIndex].Item_Name,
-            Quantity: quantity,
-            UnitPrice: itemPrice,
-            TotalCost: totalCost
-        });
-    } else {
-        showToast("Not enough money in your wallet🥺", "error");
-    }
+  const itemPrice = parseFloat(Items_JSON[itemIndex].Item_Price);
+  const totalCost = itemPrice * quantity;
+
+  if (currentWalletAmount >= totalCost) {
+    animateWalletDecrease(totalCost);
+    Arr_Purchases.push({
+      Item_Name: Items_JSON[itemIndex].Item_Name,
+      Quantity: quantity,
+      UnitPrice: itemPrice,
+      TotalCost: totalCost,
+    });
+  } else {
+    showToast("Not enough money in your wallet🥺", "error");
+  }
 }
 
 // Animate wallet decrease
 function animateWalletDecrease(amount) {
-    const startAmount = currentWalletAmount;
-    const endAmount = currentWalletAmount - amount;
-    const duration = 1600; 
-    const startTime = performance.now();
-    
-    function updateAmount(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const currentValue = startAmount - (amount * progress);
-        
-        // Update display with formatted number
-         currentWalletAmount = Math.max(0, parseFloat(currentValue.toFixed(2)));
-        updateWalletDisplay();
-        
-        if (progress < 1) {
-            requestAnimationFrame(updateAmount);
-        } else {
-            currentWalletAmount = endAmount;
-            updateWalletDisplay();
-        
-        }
+  const startAmount = currentWalletAmount;
+  const endAmount = currentWalletAmount - amount;
+  const duration = 1600;
+  const startTime = performance.now();
+
+  function updateAmount(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const currentValue = startAmount - amount * progress;
+
+    // Update display with formatted number
+    currentWalletAmount = Math.max(0, parseFloat(currentValue.toFixed(2)));
+    updateWalletDisplay();
+
+    if (progress < 1) {
+      requestAnimationFrame(updateAmount);
+    } else {
+      currentWalletAmount = endAmount;
+      updateWalletDisplay();
     }
-    
-    requestAnimationFrame(updateAmount);
+  }
+
+  requestAnimationFrame(updateAmount);
 }
 
 // Update wallet display in UI
 function updateWalletDisplay() {
-    const formatted = numberWithCommas(currentWalletAmount.toFixed(2));
+  const formatted = numberWithCommas(currentWalletAmount.toFixed(2));
 
-    $('#stickyWalletAmount').text(formatted);
-    $(`#WalletAmmount_${selectedPMIndex + 1}`).text(formatted);
+  $("#stickyWalletAmount").text(formatted);
+  $(`#WalletAmmount_${selectedPMIndex + 1}`).text(formatted);
 }
+
+// Block non numeric items from input field
+$(document).on("keydown", ".ItemCountInputClass", function (e) {
+  if (["e", "E", "+", "-", "."].includes(e.key)) {
+    e.preventDefault();
+  }
+});

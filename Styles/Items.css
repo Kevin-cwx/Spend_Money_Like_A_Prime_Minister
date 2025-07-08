@@ -29,10 +29,11 @@
 
 .SelectAmmountBtn {
     padding: 5px 10px;
-    background: rgb(137, 130, 153);
+    background: rgb(198, 198, 199);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1.3rem;
 }
 
 .BuyItemBtnClass {
@@ -44,13 +45,16 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    font-size: 1.4rem;
 }
 
 .ItemCountInputClass {
-    width: 100%;
+    width:100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 2px black solid;
     border-radius: 5px;
+    font-size: 1.3rem;
+  
 }
 
 .ItemPriceClass {
