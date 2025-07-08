@@ -43,152 +43,157 @@ var Items_JSON = [
     {
         Item_Name: "Iphone 11 ",
         Item_Price: "212.90",
-        Img_Url: ""
+        Img_Url: "https://m.media-amazon.com/images/I/41SV+iqpPfL.jpg"
     },
     {
         Item_Name: "Iphone 16 Pro Max",
         Item_Price: "1599.97",
-        Img_Url: ""
+        Img_Url: "https://bsimg.nl/images/apple-iphone-16-pro-max-1tb-wit-eu_1.png/aRS9Tks2ppZOsIAWsHGqkNdJBig%3D/fit-in/257x400/filters%3Aformat%28png%29%3Aupscale%28%29"
     },
     {
         Item_Name: "MacBook Pro 14",
         Item_Price: "1599.97",
-        Img_Url: ""
+        Img_Url: "https://crdms.images.consumerreports.org/prod/products/cr/models/408688-14-inch-laptops-apple-macbook-pro-14-10-core-m2-pro-10033975.png"
+    },
+    {
+        Item_Name: "Mac Mini",
+        Item_Price: "599",
+        Img_Url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTM-vF-WaAkBe8e5TUvr2jXCj_IVP-7lB8Rw&s"
     },
     {
         Item_Name: "Apple Vision Pro",
         Item_Price: "3499",
-        Img_Url: ""
+        Img_Url: "https://www.tradeinmytech.com/images/mobile/sell-my-apple-vision-pro.png"
     },
     {
         Item_Name: "apple watch series 9",
         Item_Price: "402.22",
-        Img_Url: ""
+        Img_Url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIyPLv4BkMlIDHKfwc6bKyoO1Hioqg9IJJ_Q&s"
     },
     {
         Item_Name: "Designer Handbag",
         Item_Price: "5500",
-        Img_Url: ""
+        Img_Url: "https://sites.jewelfeed.com/si1707/catalog/items/d7fc8a23-0cb2-44bb-9f68-5df1ab420ea8.jpg.800x800_q85_background.jpg"
     },
     {
         Item_Name: "Terrunyo Sauvignon Blanc 2022",
         Item_Price: "450",
-        Img_Url: ""
+        Img_Url: "https://greenislandrummauritius.com/wp-content/uploads/2022/02/terunyo_sauvignon_blanc.png"
     },
     {
         Item_Name: "Rolex - Sky-Dweller. Oyster, 42 mm, Oystersteel and white gold",
         Item_Price: "16600.00",
-        Img_Url: ""
+        Img_Url: "https://diamondsourcenyc.com/cdn/shop/files/2024-Release-Rolex-Sky-Dweller-42mm-Watch-336935.jpg?v=1715202798"
     },
     {
         Item_Name: "calatrava patek philippe",
         Item_Price: "116050",
-        Img_Url: ""
+        Img_Url: "https://watchmydiamonds.com/wp-content/uploads/2025/05/PP-6119R-001.png"
     },
     {
         Item_Name: "Tesla Model S Plaid",
         Item_Price: "89990",
-        Img_Url: ""
+        Img_Url: "https://imgcdn.sayaratbay.com/large/gallery/exterior/95/1805/tesla-model-s-front-angle-low-view-706768.jpg"
     },
     {
         Item_Name: "Tesla Cybertruck",
         Item_Price: "81000",
-        Img_Url: ""
+        Img_Url: "https://hips.hearstapps.com/hmg-prod/images/2025-tesla-cybertruck-3-672e75cce7814.jpg?crop=0.531xw:0.398xh;0.137xw,0.462xh&resize=1200:*"
     },
     {
-        Item_Name: "lamborghini huracán sterrato",
+        Item_Name: "Lamborghini huracán sterrato",
         Item_Price: "278,972",
-        Img_Url: ""
+        Img_Url: "https://images.dealer.com/ddc/vehicles/2024/Lamborghini/Huracan%20Sterrato/Coupe/color/Arancio%20Livrea%20Matte-ALIV-254,150,63-640-en_US.jpg"
     },
     {
         Item_Name: "Kia Rio 2018",
         Item_Price: "17500.23",
-        Img_Url: ""
+        Img_Url: "https://d18zm77o7qzu1y.cloudfront.net/uploads/files/000/004/065/original/rio.png?1466016765"
     },
     {
         Item_Name: "Nissan Sentra 2023",
         Item_Price: "21600",
-        Img_Url: ""
+        Img_Url: "https://images.dealer.com/autodata/us/color/2025/USD50NIC061C0/XGY.jpg?impolicy=downsize_bkpt&imdensity=1&w=520"
     },
     {
         Item_Name: "Gold Bar 1kg",
         Item_Price: "108648.61",
-        Img_Url: ""
+        Img_Url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfODj4miH-zx5mwon81iSE-yYff_8TC93nCg&s"
     },
     {
         Item_Name: "Yacht - Sunseeker Predator 50",
         Item_Price: "1,563,293.28",
-        Img_Url: ""
+        Img_Url: "https://media.boatbookings.com/media//8/7/163402-8762brochure10.jpg?auto=webp&format=pjpg&bg-color=033359&fit=crop&canvas=744%2C496"
     },
     {
         Item_Name: "F16",
         Item_Price: "68000000",
-        Img_Url: ""
+        Img_Url: "https://i0.wp.com/www.flyajetfighter.com/wp-content/uploads/2022/09/f-16-fighter-jet.jpg?ssl=1"
     },
     {
         Item_Name: "Boeing 747",
         Item_Price: "148000000",
-        Img_Url: ""
+        Img_Url: "https://www.thespacetechie.com/wp-content/uploads/2023/04/Boeing-scaled.jpg"
     },
     {
         Item_Name: "Mona Lisa",
         Item_Price: "860000000",
-        Img_Url: ""
+        Img_Url: "https://cdn.britannica.com/24/189624-050-F3C5BAA9/Mona-Lisa-oil-wood-panel-Leonardo-da.jpg"
     },
     {
         Item_Name: "Cruise Ship",
         Item_Price: "930000000",
-        Img_Url: ""
+        Img_Url: "https://www.aquagroup.com/wp-content/uploads/2021/05/wonder-of-the-seas-1.jpg"
     },
     {
         Item_Name: "Soi 95 - Dinner for two",
         Item_Price: "160.67",
-        Img_Url: ""
+        Img_Url: "https://publish.purewow.net/wp-content/uploads/sites/2/2023/01/Most-romantic-restaurants-in-Chicago-CAT.jpg?fit=1360%2C800"
     },
     {
         Item_Name: "Soi 95 - Dinner for two - But yall both big backs",
         Item_Price: "200.88",
-        Img_Url: ""
+        Img_Url: "https://media.cntraveler.com/photos/675375966ce4439b0881d86f/3:2/w_2560%2Cc_limit/2Z9A8039.jpg"
     },
     {
         Item_Name: "Nobu Dinner for 3 - No tip",
         Item_Price: "484.78",
-        Img_Url: ""
+        Img_Url: "https://media.timeout.com/images/106013717/750/422/image.jpg"
     },
     {
         Item_Name: "Mansion blue bay - 3 bedrooms",
         Item_Price: "",
-        Img_Url: ""
+        Img_Url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/603556362.jpg?k=19367fc187b1045439ca5fbb87c5c568335c9766632368ebaf452f079294e0b7&o=&hp=1"
     },
     {
         Item_Name: "Mansion zuurzak - 5 bedrooms",
         Item_Price: "",
-        Img_Url: ""
+        Img_Url: "https://img-v2.gtsstatic.net/reno/imagereader.aspx?imageurl=https%3A%2F%2Fm.sothebysrealty.com%2F1103i215%2F2mzd30nnzcgy45y4ny0rckvvs1i215&option=N&h=472&permitphotoenlargement=false"
     },
     {
         Item_Name: "Kas di maishi - 1 bedroom",
         Item_Price: "1300",
-        Img_Url: ""
+        Img_Url: "https://d37rmf1ynyg9aw.cloudfront.net/fit-in/1280x1280/data/v4/resources/images/e8dc1c0e-2d2d-4a61-9f46-876feca347e5.jpeg"
     },
     {
         Item_Name: "Hermes Birkin Bag",
         Item_Price: "22891.55",
-        Img_Url: ""
+        Img_Url: "https://assets.vogue.com/photos/5892029a0e6cdc8a1928e191/master/pass/F-hermes-crocodile-himalayan-birkin.jpg"
     },
     {
         Item_Name: "Louboutin Red Bottoms",
         Item_Price: "3890,75",
-        Img_Url: ""
+        Img_Url: "https://media.glamour.com/photos/56958af85fff94d44eec8883/master/pass/fashion-blogs-slaves-to-fashion-2011-03-21-0321christian-louboutin-red-soles_fa.jpg"
     },
     {
         Item_Name: "Aqualectra - Monthly Bill",
         Item_Price: "150",
-        Img_Url: ""
+        Img_Url: "https://craigheadelectric.coop/wp-content/uploads/h5p/content/8/images/image-636be6a0557ef.jpg"
     },
     {
-        Item_Name: "Flow Interner- Monthly Bill - 15% Discount",
+        Item_Name: "Flow Internet- Monthly Bill - 15% Discount",
         Item_Price: "122",
-        Img_Url: ""
+        Img_Url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOCSIw4oaaP0vLgct5g8MeZ6VQ1ReikssCew&s"
     },
     {
         Item_Name: "7 Days in Corendon",
