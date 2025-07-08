@@ -13,10 +13,10 @@
   transform: translateY(20px);
   transition: all 0.3s ease;
   min-width: 200px;
-  max-width: 300px;
+  max-width: 500px;
   padding: 12px 16px;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -28,10 +28,8 @@
 
 .toast-general {
   background-color: #3B82F6;
-  /* Tailwind Blue-500 */
 }
 
 .toast-error {
   background-color: #EF4444;
-  /* Tailwind Red-500 */
 }
