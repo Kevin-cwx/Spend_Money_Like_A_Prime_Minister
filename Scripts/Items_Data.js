@@ -198,56 +198,21 @@ var Items_JSON = [
     {
         Item_Name: "7 Days in Corendon",
         Item_Price: "6146",
-        Img_Url: ""
+        Img_Url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/69/31/03/mangrove-beach-resort.jpg?w=800&h=-1&s=1"
     },
     {
         Item_Name: "Fill up gas tank",
         Item_Price: "85.50",
-        Img_Url: ""
+        Img_Url: "https://www.alaskacartransport.com/news/wp-content/uploads/2021/01/filling-up-gas-tank-in-alaska.jpg"
     },
     {
         Item_Name: "Koi lechi",
         Item_Price: "1.20",
-        Img_Url: ""
+        Img_Url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYRHeiyl-rtjYUwilHhrcRHX_Utn9gU-h3XQ&s"
     },
     {
         Item_Name: "7 day stay at Sandals Resort",
         Item_Price: "14544",
-        Img_Url: ""
-    },
-    {
-        Item_Name: "",
-        Item_Price: "",
-        Img_Url: ""
-    },
-    {
-        Item_Name: "",
-        Item_Price: "",
-        Img_Url: ""
-    },
-    {
-        Item_Name: "",
-        Item_Price: "",
-        Img_Url: ""
-    },
-    {
-        Item_Name: "",
-        Item_Price: "",
-        Img_Url: ""
-    },
-    {
-        Item_Name: "",
-        Item_Price: "",
-        Img_Url: ""
-    },
-    {
-        Item_Name: "",
-        Item_Price: "",
-        Img_Url: ""
-    },
-    {
-        Item_Name: "",
-        Item_Price: "",
-        Img_Url: ""
-    },
+        Img_Url: "https://www.nevistas.com/ul/4/2022/06/06/02.jpg"
+    }
 ];
