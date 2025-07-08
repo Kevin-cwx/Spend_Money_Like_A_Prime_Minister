@@ -20,7 +20,7 @@ body {
     border-radius: 20px;
     padding: 1rem;
     background: linear-gradient(-45deg, #ff441f, #FF7A00, #ff8b51, #ffc400);
-    background-size: 400% 400%;
+    background-size: 600% 400%;
     animation: gradient 8s ease infinite;
 }
 
@@ -42,7 +42,7 @@ body {
     text-align: center;
     font-size: 2rem;
     color: black;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .AllPMCards {
@@ -50,6 +50,7 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     overflow-x: auto;
+    overflow-y: hidden;
     width: 100%;
     /* Use 100% of parent container */
     gap: 1rem;
@@ -59,12 +60,11 @@ body {
 
 .PMCard {
     width: 260px;
-    /* increased width from 200px */
     min-height: 300px;
     background: #fff;
     color: #000;
-    padding: 20px;
-    margin: 30px;
+    padding: 10px;
+    margin: 10px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -77,23 +77,25 @@ body {
 }
 
 .PMCard:hover {
-    transform: scale(1.09);
+    transform: scale(1.06);
     outline: 3px solid #000;
+    
 }
 
 .SelectedPMCard {
     background-color: #66e266;
     /* bright green */
     border: 2px solid black;
-    border-radius: 15px; }
+    border-radius: 15px;
+}
 
 .PrimeMinisterFaceCard {
     max-width: 100%;
-        /* ensures it never overflows */
-        height: auto;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid black;
+    /* ensures it never overflows */
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid black;
 }
 
 .ClassNamePrimeMinister {

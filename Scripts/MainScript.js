@@ -4,23 +4,23 @@ var JSON_PM = [
   {
     name: "Ivar Asjes",
     img_url: "/Media/FacePictures/ivar.png",
-    wallet_amount: 1611240,
+    wallet_amount: 1611240.91,
   },
   {
     name: "Pik Pisas",
     img_url: "/Media/FacePictures/pik.png",
-    wallet_amount: 7758121,
+    wallet_amount: 7758121.72,
   },
   {
     name: "Gerrit Schotte",
     img_url: "/Media/FacePictures/gerrit.png",
     img_url2: "/Media/FacePictures/gerrit-sad.png",
-    wallet_amount: 2236053,
+    wallet_amount: 2236053.14,
   },
   {
     name: "Eugene Rhuggenaath",
     img_url: "/Media/FacePictures/eugene.png",
-    wallet_amount: 5315998,
+    wallet_amount: 5315998.52,
   },
 ];
 
