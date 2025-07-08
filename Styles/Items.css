@@ -54,6 +54,22 @@
 }
 
 .ItemPriceClass{
-    color: red;
+    color: black;
     font-size: 20px;
+}
+
+.ItemNameClass{
+    color:black;
+    font-size: 20px;
+}
+
+.FirstChildItemcard{
+    display: flex;
+        justify-content: center;
+        /* horizontal center */
+        align-items: center;
+        /* vertical center */
+        flex-direction: column;
+        /* stack items vertically, optional */
+        text-align: center;
 }

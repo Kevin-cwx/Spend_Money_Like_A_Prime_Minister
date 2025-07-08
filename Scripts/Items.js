@@ -1,17 +1,5 @@
 var selectedPMIndex;
 
-for (var i = 0; i < Items_JSON.length; i++) {
-
-    $(".ParentItemCard").append('<div class=\"ItemCard\">\n          <img class=\"ItemImage \" id=\"ItemImageID_' + i + '\" >\n <div class=\"FirstChildItemcard\">\n          <div id=\"ItemName_' + i + '\" class=\"ItemNameClass\"></div>\n           <br><div id=\"ItemPrice_' + i + '\" class=\"ItemPriceClass\"></div>\n\n          </div>\n          <div class=\"ChildItemcard\">\n            <input type=\"number\" class=\"ItemCountInputClass\" id=\"ItemCountInput_' + i + '\">\n            <button id=\"BuyItemBtn\" class=\"BuyItemBtnClass\" onclick=\"BuyItemBtn()\">BUY </button>\n          </div>\n          <div class=\"BottomSelectAmmountBtn\">\n            <button class=\"SelectAmmountBtn\" type=\"button\" onclick=\"SelectAmmountBtn(\'' + i + '\',this.value)\" value=\'5\'>5\n            </button>\n            <button class=\"SelectAmmountBtn\" type=\"button\" onclick=\"SelectAmmountBtn(\'' + i + '\',this.value)\" value=\"20\">20\n            </button>\n            <button class=\"SelectAmmountBtn\" type=\"button\" onclick=\"SelectAmmountBtn(\'' + i + '\',this.value)\"\n              value=\"50\">50</button>\n            <button class=\"SelectAmmountBtn\" type=\"button\" onclick=\"SelectAmmountBtn(\'' + i + '\',this.value)\" value=\"100\">100\n            </button>\n\n          </div>');
-    $("#ItemName_" + i).text(Items_JSON[i]['Item_Name']);
-    $("#ItemPrice_" + i).text(Items_JSON[i]['Item_Price']);
-    $("#ItemImageID_" + i).attr("src", Items_JSON[i]['Img_Url'])
-}
-
-$(".ItemPriceClass").prepend("XCG")
-
-
-
 function initializeItems() {
     $(".ParentItemCard").empty();
     
@@ -21,7 +9,6 @@ function initializeItems() {
                 <img class="ItemImage" id="ItemImageID_${i}">
                 <div class="FirstChildItemcard">
                     <div id="ItemName_${i}" class="ItemNameClass"></div>
-                    <br>
                     <div id="ItemPrice_${i}" class="ItemPriceClass"></div>
                 </div>
                 <div class="ChildItemcard">
@@ -52,13 +39,22 @@ function selectAmountBtn(itemIndex, amount) {
 // Buy item function
 function buyItem(itemIndex) {
     if (selectedPMIndex === null) return;
-    
-    const quantity = parseInt($("#ItemCountInput_" + itemIndex).val()) || 1;
+
+    const inputSelector = "#ItemCountInput_" + itemIndex;
+    const quantityVal = $(inputSelector).val();
+
+    const quantity = parseInt(quantityVal, 10);
+
+    // Highlighted Fix: check if quantity is a valid number and positive
+    if (isNaN(quantity) || quantity <= 0) {
+        alert("Please enter a valid quantity.");
+        return;
+    }
+
     const itemPrice = parseFloat(Items_JSON[itemIndex].Item_Price);
     const totalCost = itemPrice * quantity;
-    
+
     if (currentWalletAmount >= totalCost) {
-        // Animate the wallet amount decrease
         animateWalletDecrease(totalCost);
     } else {
         alert("Not enough money!");
