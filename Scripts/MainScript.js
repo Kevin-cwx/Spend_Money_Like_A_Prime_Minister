@@ -114,3 +114,26 @@ $(document).ready(function () {
     $(this).addClass("SelectedPMCard");
   });
 });
+
+
+//Scroll to top
+$(document).ready(function () {
+  const $btn = $('#scrollToTopBtn');
+
+  $(window).scroll(function () {
+    const scrollTop = $(this).scrollTop();
+    const docHeight = $(document).height();
+    const winHeight = $(window).height();
+
+    if (scrollTop > (docHeight - winHeight) * 0.10) {
+      $btn.fadeIn();
+    } else {
+      $btn.fadeOut();
+    }
+  });
+
+  $btn.click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+});

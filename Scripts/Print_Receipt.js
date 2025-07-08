@@ -5,8 +5,8 @@ function Print_Receipt() {
     html2canvas(document.querySelector("#receipt")).then(canvas => {
         const imgData = canvas.toDataURL("image/png");
         $('#modalReceiptImage').html(`<img src="${imgData}" alt="Receipt Image" style="max-width:100%;" />`);
-        $('#receiptModal').fadeIn();
-        
+        $('#receiptModal').fadeIn(200);
+
         // Attach save functionality
         $('#saveImage').off('click').on('click', function () {
             const link = document.createElement('a');
@@ -19,18 +19,13 @@ function Print_Receipt() {
 
 
 
-$('#closeModal').on('click', function () {
+$('#closeModal, #btnContinue').on('click', function () {
     $('#receiptModal').fadeOut();
 });
 
-// Example handlers
-$('#btnContinue').on('click', function () {
-    alert("Continuing shopping...");
-    $('#receiptModal').fadeOut();
-});
 
 $('#btnWallet').on('click', function () {
-    alert("Pick a new wallet...");
+    location.reload();
     $('#receiptModal').fadeOut();
 });
 

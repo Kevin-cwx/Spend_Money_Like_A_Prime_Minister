@@ -1,172 +1,144 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>💸Gasta sen mane prome minister</title>
-    <link rel="icon" type="image/x-icon" href="/Media/Favicon/a.ico" />
 
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.js"
-      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="/Styles/MyStyleSheet.css" />
-    <link rel="stylesheet" href="/Styles/Sticky_Top_Bar.css" />
-    <link rel="stylesheet" href="/Styles/Items.css" />
-    <link rel="stylesheet" href="/Styles/Toast.css" />
-    <link rel="stylesheet" href="/Styles/Print_Receipt.css" />
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+<head>
+  <title>💸Gasta sen mane prome minister</title>
+  <link rel="icon" type="image/x-icon" href="/Media/Favicon/a.ico" />
 
-    <link href="https://fonts.cdnfonts.com/css/eqpro-bold" rel="stylesheet" />
-  </head>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/Styles/MyStyleSheet.css" />
+  <link rel="stylesheet" href="/Styles/Sticky_Top_Bar.css" />
+  <link rel="stylesheet" href="/Styles/Items.css" />
+  <link rel="stylesheet" href="/Styles/Toast.css" />
+  <link rel="stylesheet" href="/Styles/Print_Receipt.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 
-  <body>
-    <div
-      id="receiptModal"
-      style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 9999;
-      "
-    >
-      <div
-        style="
-          background: white;
-          max-width: 500px;
-          margin: 50px auto;
-          padding: 20px;
-          position: relative;
-        "
-      >
-        <!-- Close Button -->
-        <button
-          id="closeModal"
-          style="
+  <link href="https://fonts.cdnfonts.com/css/eqpro-bold" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="receiptModal" style="
+       display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+  ">
+    <div style="
+         background: white;
+      max-width: 500px;
+      max-height: 90vh;
+      margin: 50px auto;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+
+      display: flex;
+      flex-direction: column;
+    ">
+      <!-- Close Button -->
+      <button id="closeModal" style="
             position: absolute;
             top: 10px;
             right: 10px;
             border: none;
             background: none;
             font-size: 18px;
-          "
-        >
-          ✕
-        </button>
+          ">
+        ✕
+      </button>
 
-        <!-- Receipt Image Placeholder -->
-        <div
-          class="center"
-          style="margin-top: 40px"
-          id="modalReceiptImage"
-        ></div>
-        <div id="output"></div>
-        <div id="receipt" class="receipt template1"></div>
+      <!-- Receipt Image Placeholder -->
+      <div class="center" style="margin-top: 40px" id="modalReceiptImage"></div>
+      <div id="output"></div>
+      <div id="receipt" class="receipt template1"></div>
 
-        <!-- Button Grid -->
-        <div
-          style="
+      <!-- Button Grid -->
+      <div style="
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
-          "
-        >
-          <button id="btnContinue" style="flex: 1; margin-right: 10px">
-            Continue Shopping
-          </button>
-          <button id="btnWallet" style="flex: 1">Pick a New Wallet</button>
-        </div>
-
-        <!-- Save Button -->
-        <div class="center" style="margin-top: 20px">
-          <button id="saveImage">Save Image</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="MainWrapper">
-      <a
-        href="https://api.whatsapp.com/send?phone=19186006427&text=Hi mi ta interesa den hasi propaganda riba boso pagina. Esaki ta mi negoshi"
-      >
-        Advertise with us. (12K daily views)
-      </a>
-
-      <div class="sticky-header" id="stickyHeader">
-        <img class="sticky-pm-face" id="stickyPmFace" />
-        <div class="sticky-currency">
-          XCG <span id="stickyWalletAmount"></span>
-        </div>
-        <button id="Print_Receipt" onclick="Print_Receipt()">
-          🧾 Print Resibu
+          ">
+        <button id="btnContinue" style="flex: 1; margin-right: 10px">
+          Continue Shopping
         </button>
+        <button id="btnWallet" style="flex: 1">Pick a New Wallet</button>
       </div>
 
-      <div class="ChoosePrimeMinisterCard">
-        <div class="ChoosePrimeMinisterTitle">Kies un hende su potmoni</div>
-        <div class="AllPMCards">
-          <div class="PMCard" id="PMCard_1" onclick="SelectPM(1)">
-            <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_1" />
-            <div
-              class="ClassNamePrimeMinister"
-              id="IDNamePrimeMinister_1"
-            ></div>
-            <span class="CurrencyAmmount"
-              >XCG <span id="WalletAmmount_1"></span
-            ></span>
-          </div>
-
-          <div class="PMCard" id="PMCard_2" onclick="SelectPM(2)">
-            <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_2" />
-            <div
-              class="ClassNamePrimeMinister"
-              id="IDNamePrimeMinister_2"
-            ></div>
-            <span class="CurrencyAmmount"
-              >XCG <span id="WalletAmmount_2"></span
-            ></span>
-          </div>
-
-          <div class="PMCard" id="PMCard_3" onclick="SelectPM(3)">
-            <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_3" />
-            <div
-              class="ClassNamePrimeMinister"
-              id="IDNamePrimeMinister_3"
-            ></div>
-            <span class="CurrencyAmmount"
-              >XCG <span id="WalletAmmount_3"></span
-            ></span>
-          </div>
-
-          <div class="PMCard" id="PMCard_4" onclick="SelectPM(4)">
-            <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_4" />
-            <div
-              class="ClassNamePrimeMinister"
-              id="IDNamePrimeMinister_4"
-            ></div>
-            <span class="CurrencyAmmount"
-              >XCG <span id="WalletAmmount_4"></span
-            ></span>
-          </div>
-        </div>
+      <!-- Save Button -->
+      <div class="center" style="margin-top: 20px">
+        <button id="saveImage">Save Image</button>
       </div>
-
-      <div class="ChooseItemsCard">
-        <div class="ParentItemCard">
-          <!-- Items will be populated dynamically -->
-        </div>
-      </div>
-
-      <div id="toast-container"></div>
     </div>
-    <script src="/Scripts/MainScript.js"></script>
-    <script src="/Scripts/Sticky_Top_Bar.js"></script>
-    <script src="/Scripts/Items_Data.js"></script>
-    <script src="/Scripts/Items.js"></script>
-    <script src="/Scripts/Print_Receipt.js"></script>
-    <script src="/Scripts/Toast.js"></script>
-  </body>
+  </div>
+
+  <div class="MainWrapper">
+    <a
+      href="https://api.whatsapp.com/send?phone=19186006427&text=Hi mi ta interesa den hasi propaganda riba boso pagina. Esaki ta mi negoshi">
+      Advertise with us. (12K daily views)
+    </a>
+
+    <div class="sticky-header" id="stickyHeader">
+      <img class="sticky-pm-face" id="stickyPmFace" />
+      <div class="sticky-currency">
+        XCG <span id="stickyWalletAmount"></span>
+      </div>
+      <button id="Print_Receipt" onclick="Print_Receipt()">
+        🧾 Print Resibu
+      </button>
+    </div>
+
+    <div class="ChoosePrimeMinisterCard">
+      <div class="ChoosePrimeMinisterTitle">Kies un hende su potmoni</div>
+      <div class="AllPMCards">
+        <div class="PMCard" id="PMCard_1" onclick="SelectPM(1)">
+          <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_1" />
+          <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_1"></div>
+          <span class="CurrencyAmmount">XCG <span id="WalletAmmount_1"></span></span>
+        </div>
+
+        <div class="PMCard" id="PMCard_2" onclick="SelectPM(2)">
+          <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_2" />
+          <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_2"></div>
+          <span class="CurrencyAmmount">XCG <span id="WalletAmmount_2"></span></span>
+        </div>
+
+        <div class="PMCard" id="PMCard_3" onclick="SelectPM(3)">
+          <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_3" />
+          <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_3"></div>
+          <span class="CurrencyAmmount">XCG <span id="WalletAmmount_3"></span></span>
+        </div>
+
+        <div class="PMCard" id="PMCard_4" onclick="SelectPM(4)">
+          <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_4" />
+          <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_4"></div>
+          <span class="CurrencyAmmount">XCG <span id="WalletAmmount_4"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" onclick="Scroll_To_Top()" title="Go to top">Scroll to top</button>
+
+    <div class="ChooseItemsCard">
+      <div class="ParentItemCard">
+        <!-- Items will be populated dynamically -->
+      </div>
+    </div>
+
+    <div id="toast-container"></div>
+  </div>
+  <script src="/Scripts/MainScript.js"></script>
+  <script src="/Scripts/Sticky_Top_Bar.js"></script>
+  <script src="/Scripts/Items_Data.js"></script>
+  <script src="/Scripts/Items.js"></script>
+  <script src="/Scripts/Print_Receipt.js"></script>
+  <script src="/Scripts/Toast.js"></script>
+</body>
+
 </html>
