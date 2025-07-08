@@ -77,9 +77,10 @@ body {
 }
 
 .PMCard:hover {
-    transform: scale(1.06);
+    transform: scale(1.04);
     outline: 3px solid #000;
-    
+    transition: transform 0.5s ease;
+    background-color: #66e266;
 }
 
 .SelectedPMCard {
