@@ -23,6 +23,6 @@ var Items_JSON = [
     {
         Item_Name: "",
         Item_Price: "",
-        Img_Url: "/Media/ItemPictures/.png"
+        Img_Url: "/Media/ItemPictures/SaltBae.png"
     },
 ];

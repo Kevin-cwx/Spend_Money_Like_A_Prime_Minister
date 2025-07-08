@@ -4,7 +4,7 @@ var JSON_PM = [
   {
     name: "Ivar Asjes",
     img_url: "/Media/FacePictures/ivar.png",
-    wallet_amount: 2528240,
+    wallet_amount: 1611240,
   },
   {
     name: "Pik Pisas",
@@ -35,16 +35,22 @@ for (let i = 0; i < JSON_PM.length; i++) {
   $(`#WalletAmmount_${index}`).text(numberWithCommas(JSON_PM[i].wallet_amount));
 }
 
+
+//
+//
+//
 var currentWalletAmount;
 SelectPM = (ID_Clicked) => {
   log("PM_Card_Clicked: " + ID_Clicked);
 
   // Remove classes from all PMCards and their children
-  for (let i = 1; i <= 4; i++) {
-    $(`#PMCard_${i}`).removeClass("SelectedPMCard");
-    $(`#PMCard_${i}`).children().removeClass("TextWithinPMCard_LargeFont");
-  }
-  selectedPMIndex = ID_Clicked;
+  // $(".PMCard")
+  //   .removeClass("SelectedPMCard")
+  //   .children()
+  //   .removeClass("TextWithinPMCard_LargeFont");
+
+
+  selectedPMIndex = ID_Clicked-1;
   currentWalletAmount = JSON_PM[selectedPMIndex].wallet_amount;
 
   // Add classes to clicked PMCard and children
@@ -54,10 +60,9 @@ SelectPM = (ID_Clicked) => {
     .addClass("TextWithinPMCard_LargeFont");
 
   // Update sticky header content
-  const pmIndex = ID_Clicked - 1;
-  $("#stickyPmFace").attr("src", JSON_PM[pmIndex].img_url);
+  $("#stickyPmFace").attr("src", JSON_PM[selectedPMIndex].img_url);
   $("#stickyWalletAmount").text(
-    numberWithCommas(JSON_PM[pmIndex].wallet_amount)
+    numberWithCommas(JSON_PM[selectedPMIndex].wallet_amount)
   );
   $("#stickyHeader").css("display", "flex");
 
@@ -74,7 +79,6 @@ var WalletAmmount = $("#WalletAmmount").text();
 var Original_WalletAmmount = $("#WalletAmmount").text();
 
 /* ItemCard */
-$("#ItemImageID_1").attr("src", "/Media/ItemPictures/Burger.png");
 
 function SelectAmmountBtn(InputID, MyValue) {
   log("InputID: " + InputID + " " + "Value: " + MyValue);
