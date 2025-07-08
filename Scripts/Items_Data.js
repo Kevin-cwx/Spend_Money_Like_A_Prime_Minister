@@ -102,7 +102,7 @@ var Items_JSON = [
     },
     {
         Item_Name: "Lamborghini huracán sterrato",
-        Item_Price: "278,972",
+        Item_Price: "278972",
         Img_Url: "https://images.dealer.com/ddc/vehicles/2024/Lamborghini/Huracan%20Sterrato/Coupe/color/Arancio%20Livrea%20Matte-ALIV-254,150,63-640-en_US.jpg"
     },
     {
@@ -122,7 +122,7 @@ var Items_JSON = [
     },
     {
         Item_Name: "Yacht - Sunseeker Predator 50",
-        Item_Price: "1,563,293.28",
+        Item_Price: "1563293.28",
         Img_Url: "https://media.boatbookings.com/media//8/7/163402-8762brochure10.jpg?auto=webp&format=pjpg&bg-color=033359&fit=crop&canvas=744%2C496"
     },
     {
@@ -162,12 +162,12 @@ var Items_JSON = [
     },
     {
         Item_Name: "Mansion blue bay - 3 bedrooms",
-        Item_Price: "",
+        Item_Price: "1016088",
         Img_Url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/603556362.jpg?k=19367fc187b1045439ca5fbb87c5c568335c9766632368ebaf452f079294e0b7&o=&hp=1"
     },
     {
         Item_Name: "Mansion zuurzak - 5 bedrooms",
-        Item_Price: "",
+        Item_Price: "1435000",
         Img_Url: "https://img-v2.gtsstatic.net/reno/imagereader.aspx?imageurl=https%3A%2F%2Fm.sothebysrealty.com%2F1103i215%2F2mzd30nnzcgy45y4ny0rckvvs1i215&option=N&h=472&permitphotoenlargement=false"
     },
     {
@@ -182,7 +182,7 @@ var Items_JSON = [
     },
     {
         Item_Name: "Louboutin Red Bottoms",
-        Item_Price: "3890,75",
+        Item_Price: "3890",
         Img_Url: "https://media.glamour.com/photos/56958af85fff94d44eec8883/master/pass/fashion-blogs-slaves-to-fashion-2011-03-21-0321christian-louboutin-red-soles_fa.jpg"
     },
     {
@@ -214,5 +214,10 @@ var Items_JSON = [
         Item_Name: "7 day stay at Sandals Resort",
         Item_Price: "14544",
         Img_Url: "https://www.nevistas.com/ul/4/2022/06/06/02.jpg"
-    }
+    },
+    {
+        Item_Name: "Donate 0.10 cents to Charity",
+        Item_Price: "0.10",
+        Img_Url: "https://149719686.v2.pressablecdn.com/wp-content/uploads/2024/08/10c-CBCS-18.25mm-Interrupted-REV-FQ.png.webp"
+    },
 ];

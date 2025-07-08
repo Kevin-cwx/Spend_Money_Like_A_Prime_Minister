@@ -25,7 +25,7 @@ function initializeItems() {
         `);
         
         $("#ItemName_" + i).text(Items_JSON[i]['Item_Name']);
-        $("#ItemPrice_" + i).text("XCG " + Items_JSON[i]['Item_Price']);
+        $("#ItemPrice_" + i).text("XCG " + numberWithCommas(parseFloat(Items_JSON[i]['Item_Price']).toFixed(2)));
         $("#ItemImageID_" + i).attr("src", Items_JSON[i]['Img_Url']);
     }
 }
@@ -96,6 +96,7 @@ function animateWalletDecrease(amount) {
 // Update wallet display in UI
 function updateWalletDisplay() {
     const formatted = numberWithCommas(currentWalletAmount.toFixed(2));
-    $('#stickyWalletAmount').text(numberWithCommas(currentWalletAmount));
-    $(`#WalletAmmount_${selectedPMIndex + 1}`).text(numberWithCommas(currentWalletAmount));
+
+    $('#stickyWalletAmount').text(formatted);
+    $(`#WalletAmmount_${selectedPMIndex + 1}`).text(formatted);
 }
