@@ -12,7 +12,7 @@ function initializeItems() {
                     <div id="ItemPrice_${i}" class="ItemPriceClass"></div>
                 </div>
                 <div class="ChildItemcard">
-                    <input type="number" class="ItemCountInputClass" id="ItemCountInput_${i}" min="0" value="0">
+                    <input type="number" class="ItemCountInputClass" id="ItemCountInput_${i}" min="1" value="1">
                     <button class="BuyItemBtnClass" onclick="buyItem(${i})">BUY</button>
                 </div>
                 <div class="BottomSelectAmmountBtn">
@@ -38,18 +38,22 @@ function selectAmountBtn(itemIndex, amount) {
 
 // Buy item function
 function buyItem(itemIndex) {
-    if (selectedPMIndex === null) return;
-
+    if (selectedPMIndex == null) { 
+        showToast("Please select a Prime Minister first", "error");
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+        return;
+    }
+        
     const inputSelector = "#ItemCountInput_" + itemIndex;
     const quantityVal = $(inputSelector).val();
 
     const quantity = parseInt(quantityVal, 10);
 
-    // Highlighted Fix: check if quantity is a valid number and positive
-    if (isNaN(quantity) || quantity <= 0) {
-        alert("Please enter a valid quantity.");
-        return;
-    }
+    // // Highlighted Fix: check if quantity is a valid number and positive
+    // if (isNaN(quantity) || quantity <= 0) {
+    //     showToast("Not enough money", "error");
+    //     return;
+    // }
 
     const itemPrice = parseFloat(Items_JSON[itemIndex].Item_Price);
     const totalCost = itemPrice * quantity;
@@ -57,7 +61,7 @@ function buyItem(itemIndex) {
     if (currentWalletAmount >= totalCost) {
         animateWalletDecrease(totalCost);
     } else {
-        alert("Not enough money!");
+        showToast("Not enough money in your wallet🥺", "error");
     }
 }
 
