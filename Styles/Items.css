@@ -29,7 +29,7 @@
 
 .SelectAmmountBtn {
     padding: 5px 10px;
-    background: #f0f0f0;
+    background:rgb(137, 130, 153);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -61,6 +61,7 @@
 .ItemNameClass{
     color:black;
     font-size: 20px;
+    
 }
 
 .FirstChildItemcard{

@@ -1,0 +1,6 @@
+[] Print Receipt Functionality
+[] Email suggestions for items
+[] Add analytics tracker
+[] Fix sticky money shifting image
+[] Make mobile friendly
+[] Item name - always fit on one line
