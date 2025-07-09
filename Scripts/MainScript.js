@@ -125,7 +125,7 @@ $(document).ready(function () {
     const docHeight = $(document).height();
     const winHeight = $(window).height();
 
-    if (scrollTop > (docHeight - winHeight) * 0.10) {
+    if (scrollTop > (docHeight - winHeight) * 0.30) {
       $btn.fadeIn();
     } else {
       $btn.fadeOut();
