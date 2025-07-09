@@ -112,7 +112,7 @@ function generateReceiptHTML(purchases) {
     const price = formatCurrency(item.UnitPrice);
 
     // Align price to far right of 40-character width
-    const line = `${name}${qty}`.padEnd(33, " ") + price.padStart(7, " ");
+    const line = `${name}${qty}`.padEnd(25, " ") + price.padStart(7, " ");
 
     html += `<pre>${line}</pre>`;
   });
@@ -154,10 +154,33 @@ function generateReceiptHTML(purchases) {
   return transactionID;
 }
 
+function consolidatePurchases(purchases) {
+  const consolidated = {};
+
+  purchases.forEach(({ Item_Name, Quantity, UnitPrice }) => {
+    if (!consolidated[Item_Name]) {
+      consolidated[Item_Name] = {
+        Item_Name,
+        Quantity: 0,
+        UnitPrice,
+        TotalCost: 0,
+      };
+    }
+    consolidated[Item_Name].Quantity += Quantity;
+    consolidated[Item_Name].TotalCost = consolidated[Item_Name].Quantity * UnitPrice;
+  });
+
+  // Return as array
+  return Object.values(consolidated);
+}
+
+
 $("#receipt").hide();
 function Print_Receipt() {
   $("#receipt").show();
-  const txn = generateReceiptHTML(Arr_Purchases);
+  //const txn = generateReceiptHTML(Arr_Purchases);
+  const consolidatedPurchases = consolidatePurchases(Arr_Purchases);
+  generateReceiptHTML(consolidatedPurchases);
   html2canvas(document.querySelector("#receipt"), {
     backgroundColor: "#ffffff", // ✅ Set white background for image
   }).then((canvas) => {
