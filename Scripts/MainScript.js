@@ -130,3 +130,13 @@ $(document).ready(function () {
     return false;
   });
 });
+
+
+window.onload = function () {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+};
+
+
+$("#Change_Items").on("click", function () {
+  initializeItems("go");
+});

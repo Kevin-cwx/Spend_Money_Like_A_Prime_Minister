@@ -16,7 +16,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://fonts.cdnfonts.com/css/eqpro-bold" rel="stylesheet" />
 </head>
 
@@ -43,6 +43,7 @@
 
     <div class="ChoosePrimeMinisterCard">
       <div class="ChoosePrimeMinisterTitle">Kies un hende su potmoni</div>
+     
       <div class="AllPMCards">
         <div class="PMCard" id="PMCard_1" onclick="SelectPM(1)">
           <img class="PrimeMinisterFaceCard" id="ImagePrimeMinister_1" />
@@ -67,6 +68,7 @@
           <div class="ClassNamePrimeMinister" id="IDNamePrimeMinister_4"></div>
           <span class="CurrencyAmmount">XCG <span id="WalletAmmount_4"></span></span>
         </div>
+        <span class="animate__animated animate__tada animate__infinite"  id="Change_Items">😈</span>
       </div>
     </div>
 
@@ -104,6 +106,7 @@
   <script src="/Scripts/MainScript.js"></script>
   <script src="/Scripts/Sticky_Top_Bar.js"></script>
   <script src="/Scripts/Items_Data.js"></script>
+  <script src="/Scripts/B_Items_Data.js"></script>
   <script src="/Scripts/Items.js"></script>
   <script src="/Scripts/Print_Receipt.js"></script>
   <script src="/Scripts/Toast.js"></script>

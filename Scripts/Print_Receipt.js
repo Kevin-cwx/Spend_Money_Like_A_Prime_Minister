@@ -177,7 +177,10 @@ function consolidatePurchases(purchases) {
 
 $("#receipt").hide();
 function Print_Receipt() {
+
   $("#receipt").show();
+  $("#Change_Items").show();
+
   //const txn = generateReceiptHTML(Arr_Purchases);
   const consolidatedPurchases = consolidatePurchases(Arr_Purchases);
   generateReceiptHTML(consolidatedPurchases);
@@ -208,7 +211,7 @@ document.getElementById("continueShoppingBtn").onclick = function () {
 
 document.getElementById("pickWalletBtn").onclick = function () {
   location.reload();
-  Scroll_To_Top();
+  
 };
 
 document.getElementById("saveImageBtn").onclick = function () {

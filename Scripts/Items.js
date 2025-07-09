@@ -1,7 +1,13 @@
 var selectedPMIndex;
 
-function initializeItems() {
+function initializeItems(a) {
   $(".ParentItemCard").empty();
+
+  
+  if (a == "go") { 
+    Items_JSON = Items_JSON.concat(Items_JSON_B);
+    shuffleArray(Items_JSON);
+  }
 
   for (var i = 0; i < Items_JSON.length; i++) {
     $(".ParentItemCard").append(`
@@ -116,3 +122,11 @@ $(document).on("keydown", ".ItemCountInputClass", function (e) {
     e.preventDefault();
   }
 });
+
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}

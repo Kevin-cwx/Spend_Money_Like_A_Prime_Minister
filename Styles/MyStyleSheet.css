@@ -22,7 +22,7 @@ body {
     background: linear-gradient(-45deg, #ff441f, #FF7A00, #ff8b51, #ffc400);
     background-size: 600% 400%;
     animation: gradient 8s ease infinite;
-   
+
 }
 
 @keyframes gradient {
@@ -167,6 +167,19 @@ body {
     transform: translateY(0);
 }
 
+#Change_Items {
+    /* display: none; */
+    font-size: 50px;
+    display: inline-flex;
+    height: min-content;
+
+}
+
+#Change_Items:hover {
+    display: none;
+    transform: scale(1.1);
+
+}
 
 img {
     user-select: none !important;
@@ -177,4 +190,3 @@ img {
     pointer-events: auto;
     /* optional, in case anything is blocked */
 }
-
