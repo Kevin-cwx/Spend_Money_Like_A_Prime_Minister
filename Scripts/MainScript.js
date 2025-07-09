@@ -95,17 +95,7 @@ function SelectAmmountBtn(InputID, MyValue) {
 
 /* */
 
-$(document).ready(function () {
-  $("img").each(function () {
-    $(this).attr("draggable", "false").css({
-      "user-select": "none",
-      "-webkit-user-drag": "none",
-      "-webkit-user-select": "none",
-      "-moz-user-select": "none",
-      "-ms-user-select": "none",
-    });
-  });
-});
+
 
 $(document).ready(function () {
   $(".PMCard").click(function () {
