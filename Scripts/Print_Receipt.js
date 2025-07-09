@@ -37,6 +37,7 @@ function getRandomSlogan() {
     return Slogan[idx];
 }
 
+
 function generateReceiptHTML(purchases) {
     const template = getRandomTemplate();
     const now = new Date();
@@ -56,7 +57,12 @@ function generateReceiptHTML(purchases) {
     const last4 = Math.floor(1000 + Math.random() * 8999);
 
     let html = `<img src="${getRandomLogoUrl()}" alt="Store Logo" class="store-logo" />`;
-    html += `<div class="center">Prime Minister: ${PM_Name}</div>`;
+    html += `
+    <div class="PM_Receipt_Container">
+      <div class="PM_Name_Receipt">Prime Minister: ${PM_Name}</div>
+      <img src="${PM_Face_Receipt}" class="PM_Face_Receipt" />
+    </div>
+  `;
     html += `<div class="store-name center">${getRandomSuperMarketName()}</div>`;
     html += `<div class="center">${getRandomSlogan()}</div>`;
     html += `<div class="center">24 Schottegatweg Noord</div>`;

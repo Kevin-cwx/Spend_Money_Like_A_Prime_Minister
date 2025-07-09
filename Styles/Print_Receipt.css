@@ -5,7 +5,6 @@
     color: black;
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
-    font-weight: 600;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -13,6 +12,7 @@
     transition: background-color 0.2s ease, transform 0.1s ease;
     margin-left: 30px;
 }
+
 #Print_Receipt:hover {
     background-color: #2563eb;
     /* Darker Indigo */
@@ -31,6 +31,31 @@
 
 .center {
     text-align: center;
+}
+
+.PM_Receipt_Container {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.PM_Face_Receipt {
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 50px;
+    
+    object-fit: cover;
+    margin: 0;
+    margin-left: 10px;
+    /* remove any default margin */
+}
+
+.PM_Name_Receipt {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 .barcode-container {
@@ -149,14 +174,13 @@
     top: 10px;
     font-size: 24px;
     cursor: pointer;
-    font-weight: bold;
     color: white;
 }
 
 .modal-image-container img {
     max-width: 100%;
     height: auto;
- 
+
 }
 
 .modal-buttons-row {
@@ -176,7 +200,6 @@
     padding: 0.6rem 1rem;
     border: none;
     border-radius: 0.5rem;
-    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }

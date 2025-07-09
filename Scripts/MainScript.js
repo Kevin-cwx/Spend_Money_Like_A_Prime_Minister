@@ -47,6 +47,7 @@ for (let i = 0; i < JSON_PM.length; i++) {
 //
 var currentWalletAmount;
 var PM_Name;
+var PM_Face_Receipt;
 SelectPM = (ID_Clicked) => {
   log("PM_Card_Clicked: " + ID_Clicked);
 
@@ -60,7 +61,7 @@ SelectPM = (ID_Clicked) => {
   selectedPMIndex = ID_Clicked-1;
   currentWalletAmount = JSON_PM[selectedPMIndex].wallet_amount;
   PM_Name = JSON_PM[selectedPMIndex].name
-
+  PM_Face_Receipt = JSON_PM[selectedPMIndex].img_url;
   // Add classes to clicked PMCard and children
   $(`#PMCard_${ID_Clicked}`)
     .addClass("SelectedPMCard")
