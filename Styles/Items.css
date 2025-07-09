@@ -51,6 +51,7 @@
     cursor: pointer;
     margin-top: 10px;
     font-size: 1.4rem;
+    position: relative;
 }
 
 .BuyItemBtnClass:hover {
