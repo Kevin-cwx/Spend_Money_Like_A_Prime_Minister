@@ -8,7 +8,7 @@ var Items_JSON = [
     {
         Item_Name: "Pastechi di keshi",
         Item_Price: "2.50",
-        Img_Url: "/Media/ItemPictures/Pastechi.png"
+        Img_Url: "https://i.pinimg.com/474x/eb/ac/dd/ebacddc0c53cae2e5d143bc5c3c99b3b.jpg"
     },
     {
         Item_Name: "Busta Lila",
