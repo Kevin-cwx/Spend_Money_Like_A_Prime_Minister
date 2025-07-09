@@ -172,11 +172,12 @@ body {
     font-size: 50px;
     display: inline-flex;
     height: min-content;
+    display: none;
 
 }
 
 #Change_Items:hover {
-    display: none;
+   
     transform: scale(1.1);
 
 }
