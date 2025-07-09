@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/Styles/Items.css" />
   <link rel="stylesheet" href="/Styles/Toast.css" />
   <link rel="stylesheet" href="/Styles/Print_Receipt.css" />
-  <link rel="stylesheet" href="/Styles/A_Print_Receipt.css" />
+  <link rel="stylesheet" href="/Styles/Money_Fall.css" />
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
@@ -21,36 +21,9 @@
 </head>
 
 <body>
-  <div id="receiptModal">
-    <div class="aaa">
-      <!-- Close Button -->
-      <button id="closeModal">
-        ✕
-      </button>
+  <div id="receipt" class="receipt template1"></div>
 
-      <!-- Receipt Image Placeholder -->
-      <div class="center" style="margin-top: 40px" id="modalReceiptImage"></div>
-      <div id="output"></div>
-      <div id="receipt" class="receipt template1"></div>
 
-      <!-- Button Grid -->
-      <div style="
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-          ">
-        <button id="btnContinue" style="flex: 1; margin-right: 10px">
-          Continue Shopping
-        </button>
-        <button id="btnWallet" style="flex: 1">Pick a New Wallet</button>
-      </div>
-
-      <!-- Save Button -->
-      <div class="center" style="margin-top: 20px">
-        <button id="saveImage">Save Image</button>
-      </div>
-    </div>
-  </div>
 
   <div class="MainWrapper">
     <a
@@ -97,6 +70,11 @@
       </div>
     </div>
 
+    <div class="center">
+      <!-- <button id="generate">Generate Receipt</button> -->
+      <div id="output"></div>
+    </div>
+
     <button id="scrollToTopBtn" onclick="Scroll_To_Top()" title="Go to top">Scroll to top</button>
 
     <div class="ChooseItemsCard">
@@ -104,6 +82,22 @@
         <!-- Items will be populated dynamically -->
       </div>
     </div>
+
+
+    <div id="receiptModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <div id="modalImageContainer" class="modal-image-container"></div>
+        <div class="modal-buttons-row">
+          <button id="pickWalletBtn">Pick a new wallet</button>
+          <button id="continueShoppingBtn">Continue shopping</button>
+        </div>
+        <div class="modal-save-row">
+          <button id="saveImageBtn">Save image</button>
+        </div>
+      </div>
+    </div>
+
 
     <div id="toast-container"></div>
   </div>
@@ -113,6 +107,7 @@
   <script src="/Scripts/Items.js"></script>
   <script src="/Scripts/Print_Receipt.js"></script>
   <script src="/Scripts/Toast.js"></script>
+  <script src="/Scripts/Money_Fall.js"></script>
 </body>
 
 </html>

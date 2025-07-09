@@ -13,6 +13,11 @@
     transition: background-color 0.2s ease, transform 0.1s ease;
     margin-left: 30px;
 }
+#Print_Receipt:hover {
+    background-color: #2563eb;
+    /* Darker Indigo */
+    transform: translateY(-1px);
+}
 
 .receipt {
     width: 300px;
@@ -106,4 +111,76 @@
     max-width: 150px;
     /* Adjust size as needed */
     height: auto;
+}
+
+/* 🔥 Modal styling */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 25, 25, 0.63);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #2a2c2e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    max-width: 400px;
+    overflow-y: auto;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.modal-image-container img {
+    max-width: 100%;
+    height: auto;
+ 
+}
+
+.modal-buttons-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.modal-save-row {
+    margin-top: 1rem;
+}
+
+.modal-content button {
+    background-color: #3B82F6;
+    color: white;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-content button:hover {
+    background-color: #2563eb;
 }

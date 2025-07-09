@@ -1,0 +1,30 @@
+.fall-container {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+
+.falling-pixel {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    opacity: 1;
+    animation-name: fallPixel;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fallPixel {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(120px) rotate(360deg);
+    }
+}
