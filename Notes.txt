@@ -1,7 +1,8 @@
 [] Print Receipt Functionality
 [] Email suggestions for items
 [] Add analytics tracker
-[] Fix sticky money shifting image
+[x] Fix sticky money shifting image
 [] Make mobile friendly
-[] Item name - always fit on one line
+[x meh] Item name - always fit on one line
 [] Add credit card animation when PM is selected
+[] Fix Receipt, being cut off, have y scroll for long receipts
