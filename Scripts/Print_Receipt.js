@@ -87,12 +87,12 @@ function generateReceiptHTML(purchases) {
   const last4 = Math.floor(1000 + Math.random() * 8999);
 
   let html = `<img src="${getRandomLogoUrl()}" alt="Store Logo" class="store-logo" />`;
-  html += `
-    <div class="PM_Receipt_Container">
-      <div class="PM_Name_Receipt">Prime Minister: ${PM_Name}</div>
-      <img src="${PM_Face_Receipt}" class="PM_Face_Receipt" />
-    </div>
-  `;
+  // html += `
+  //   <div class="PM_Receipt_Container">
+  //     <div class="PM_Name_Receipt">Prime Minister: ${PM_Name}</div>
+  //     <img src="${PM_Face_Receipt}" class="PM_Face_Receipt" />
+  //   </div>
+  // `;
   html += `<div class="store-name center">${getRandomSuperMarketName()}</div>`;
   html += `<div class="center">${getRandomSlogan()}</div>`;
   html += `<div class="center">24 Schottegatweg Noord</div>`;
@@ -112,7 +112,7 @@ function generateReceiptHTML(purchases) {
     const price = formatCurrency(item.UnitPrice);
 
     // Align price to far right of 40-character width
-    const line = `${name}${qty}`.padEnd(25, " ") + price.padStart(7, " ");
+    const line = `${name}${qty}`.padEnd(17, " ") + price.padStart(7, " ");
 
     html += `<pre>${line}</pre>`;
   });
