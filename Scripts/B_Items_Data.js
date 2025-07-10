@@ -100,17 +100,8 @@ var Items_JSON_B = [
     Item_Price: "40",
     Img_Url:
       "https://www.liveabout.com/thmb/OaQxR6pBEuGf2VDU_dvTMuc6Lyg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-640274128-63af24066cfd4132b714d736651241ea.jpg",
-  },
-  {
-    Item_Name: "",
-    Item_Price: "",
-    Img_Url: "",
-  },
-  {
-    Item_Name: "",
-    Item_Price: "",
-    Img_Url: "",
-  },
+  }
+  
 ];
 
 function Get_Current_Wallet_Ammount() {
