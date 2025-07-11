@@ -1,13 +1,15 @@
 var selectedPMIndex;
-
+var hasConcatenated = false;
 function initializeItems(a) {
   $(".ParentItemCard").empty();
 
-  
-  if (a == "go") { 
+  if (a == "go" && !hasConcatenated) {
     Items_JSON = Items_JSON.concat(Items_JSON_B);
-    shuffleArray(Items_JSON);
+    hasConcatenated = true;
   }
+  shuffleArray(Items_JSON);
+
+  shuffleArray(Items_JSON_B);
 
   for (var i = 0; i < Items_JSON.length; i++) {
     $(".ParentItemCard").append(`
@@ -121,7 +123,6 @@ $(document).on("keydown", ".ItemCountInputClass", function (e) {
     e.preventDefault();
   }
 });
-
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {

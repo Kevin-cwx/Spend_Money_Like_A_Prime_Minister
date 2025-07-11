@@ -3,8 +3,8 @@ const container = document.querySelector(".AllPMCards");
 
 let x = 0;
 let y = 0;
-let dx = 2;
-let dy = 2;
+let dx = 8;
+let dy = 8;
 
 const itemWidth = item.offsetWidth;
 const itemHeight = item.offsetHeight;

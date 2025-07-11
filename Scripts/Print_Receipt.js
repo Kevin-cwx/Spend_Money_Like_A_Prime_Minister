@@ -98,7 +98,7 @@ function generateReceiptHTML(purchases) {
   let html = `<img src="${getRandomLogoUrl()}" alt="Store Logo" class="store-logo" />`;
   html += `
     <div class="PM_Receipt_Container">
-      <div class="PM_Name_Receipt">Prime Minister: ${PM_Name}</div>
+      <div class="PM_Name_Receipt">${PM_Name}</div>
       <img src="${PM_Face_Receipt}" class="PM_Face_Receipt" />
     </div>
   `;
