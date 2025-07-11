@@ -1,5 +1,6 @@
 var selectedPMIndex;
 var hasConcatenated = false;
+var isFirstLoad = true;
 function initializeItems(a) {
   $(".ParentItemCard").empty();
 
@@ -7,7 +8,16 @@ function initializeItems(a) {
     Items_JSON = Items_JSON.concat(Items_JSON_B);
     hasConcatenated = true;
   }
-  shuffleArray(Items_JSON);
+
+  // ✅ SORT by Item_Price ASC on first load only
+  if (isFirstLoad) {
+    Items_JSON.sort(
+      (a, b) => parseFloat(a.Item_Price) - parseFloat(b.Item_Price)
+    );
+    isFirstLoad = false;
+  } else {
+    shuffleArray(Items_JSON);
+  }
 
   shuffleArray(Items_JSON_B);
 

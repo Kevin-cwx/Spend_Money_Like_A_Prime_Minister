@@ -86,6 +86,8 @@ SelectPM = (ID_Clicked) => {
     },
     500
   );
+
+  
 };
 
 var WalletAmmount = $("#WalletAmmount").text();
