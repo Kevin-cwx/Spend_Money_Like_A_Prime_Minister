@@ -32,8 +32,9 @@
 }
 
 .PM_Receipt_Container {
-    display: flex;
+   
     align-items: center;
+    text-align: center;
     padding: 0;
     margin: 0;
 }
@@ -41,7 +42,7 @@
 .PM_Face_Receipt {
     border-radius: 50%;
     border: 2px solid black;
-    height: 50px;
+    height: 70px;
     padding: 0;
     object-fit: cover;
     margin: 0;

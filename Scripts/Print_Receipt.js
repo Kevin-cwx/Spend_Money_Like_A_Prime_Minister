@@ -104,7 +104,7 @@ function generateReceiptHTML(purchases) {
   `;
   html += `<div class="store-name center">${getRandomSuperMarketName()}</div>`;
   html += `<div class="center">${getRandomSlogan()}</div>`;
-  html += `<div class="center">Kaya La chincha 27</div>`;
+  html += `<br><div class="center">Kaya La chincha 27</div>`;
   html += `<div class="center">${dateStr}</div>`;
   html += `<div class="line"></div>`;
   html += `<pre>ITEM                  QTY   PRICE</pre>`;

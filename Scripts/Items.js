@@ -14,12 +14,13 @@ function initializeItems(a) {
     Items_JSON.sort(
       (a, b) => parseFloat(a.Item_Price) - parseFloat(b.Item_Price)
     );
-    isFirstLoad = false;
+    
   } else {
     shuffleArray(Items_JSON);
   }
 
   shuffleArray(Items_JSON_B);
+  isFirstLoad = false;
 
   for (var i = 0; i < Items_JSON.length; i++) {
     $(".ParentItemCard").append(`

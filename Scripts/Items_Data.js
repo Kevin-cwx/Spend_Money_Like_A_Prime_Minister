@@ -6,6 +6,11 @@ var Items_JSON = [
         Img_Url: "https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Double-Cheeseburger:product-header-mobile?wid=768&hei=441&dpr=off"
     },
     {
+        Item_Name: "T shirt",
+        Item_Price: "24.80",
+        Img_Url: "https://i.pinimg.com/736x/06/14/28/0614281c43fda3ad87fa9a82371032c4.jpg"
+    },
+    {
         Item_Name: "Pastechi di keshi",
         Item_Price: "2.50",
         Img_Url: "https://i.pinimg.com/474x/eb/ac/dd/ebacddc0c53cae2e5d143bc5c3c99b3b.jpg"

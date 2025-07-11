@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    initializeItems(); // generate your dynamic buttons
+    //initializeItems(); // generate your dynamic buttons
 
     const Item_Fall = "pixels"; // change to "pixels" or "money"
 
