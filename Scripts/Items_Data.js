@@ -91,9 +91,9 @@ var Items_JSON = [
         Img_Url: "https://watchmydiamonds.com/wp-content/uploads/2025/05/PP-6119R-001.png"
     },
     {
-        Item_Name: "Tesla Model S Plaid",
+        Item_Name: "Tesla Model Y",
         Item_Price: "89990",
-        Img_Url: "https://imgcdn.sayaratbay.com/large/gallery/exterior/95/1805/tesla-model-s-front-angle-low-view-706768.jpg"
+        Img_Url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/d100a766-4613-4138-b600-eb0cad3cdd39/deduzah-ba4de4c8-1bad-4849-ad52-093361bc012f.png"
     },
     {
         Item_Name: "Tesla Cybertruck",

@@ -6,7 +6,7 @@ $(document).ready(function () {
     function showStickyHeader(pmId) {
         // Get the PM data
         const pmFace = $('#ImagePrimeMinister_' + pmId).attr('src');
-        const pmAmount = $('#WalletAmmount_' + pmId).text();
+        const pmAmount = $('#WalletAmount_' + pmId).text();
         const pmName = $('#IDNamePrimeMinister_' + pmId).text();
 
         // Set the sticky header content

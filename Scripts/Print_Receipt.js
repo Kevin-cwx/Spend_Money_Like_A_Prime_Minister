@@ -16,7 +16,7 @@ const logoUrls = [
   "../Media/Company_Logo/Company_Logo_6.png",
 ];
 
-const SuperMarketName = [
+var SuperMarketName = [
   "Walmart Supercenter",
   "Goisco",
   "Centrum Piscadera",
@@ -29,12 +29,20 @@ const SuperMarketName = [
   "Safeway",
   "Publix",
 ];
+var SuperMarketName = [""];
 
 const Slogan = [
   "Gasta sen, biba dushi",
   "4 Credit card den saku",
-  "Min ta draai ku para mas, awor ta bou awa mi sen ta",
-  "Sen nobo di blub blub",
+  "Bo tin debe solamente si bo tin intenshon di page",
+  "Ora mi kobra, mi ta wak kon ta hasi",
+  "Ken tin un yotin fiami?",
+  "Rolex na man pero pagatinu ta na 2",
+  "Tur luna ta subi gasolin , pero salaris si ta keda meskos",
+  "Min ta draai ku broke",
+  "Brokieeee alert !!",
+  "Min ta draai ku para mas, awor ta bou di awa mi sen ta",
+  "Sen nobo di blub blub 🐟",
   "Spend like no one's watching.",
   "Money? Never heard of it.",
   "Financial regret starts here.",
@@ -50,6 +58,7 @@ const Slogan = [
   "Frugal? Never met her.",
   "Broke looks good on you.",
   "Cha-ching! There goes rent.",
+  "Pichiri tot en met"
 ];
 
 // Helper function to pick random logo URL
@@ -87,15 +96,15 @@ function generateReceiptHTML(purchases) {
   const last4 = Math.floor(1000 + Math.random() * 8999);
 
   let html = `<img src="${getRandomLogoUrl()}" alt="Store Logo" class="store-logo" />`;
-  // html += `
-  //   <div class="PM_Receipt_Container">
-  //     <div class="PM_Name_Receipt">Prime Minister: ${PM_Name}</div>
-  //     <img src="${PM_Face_Receipt}" class="PM_Face_Receipt" />
-  //   </div>
-  // `;
+  html += `
+    <div class="PM_Receipt_Container">
+      <div class="PM_Name_Receipt">Prime Minister: ${PM_Name}</div>
+      <img src="${PM_Face_Receipt}" class="PM_Face_Receipt" />
+    </div>
+  `;
   html += `<div class="store-name center">${getRandomSuperMarketName()}</div>`;
   html += `<div class="center">${getRandomSlogan()}</div>`;
-  html += `<div class="center">24 Schottegatweg Noord</div>`;
+  html += `<div class="center">Kaya La chincha 27</div>`;
   html += `<div class="center">${dateStr}</div>`;
   html += `<div class="line"></div>`;
   html += `<pre>ITEM                  QTY   PRICE</pre>`;
@@ -112,7 +121,11 @@ function generateReceiptHTML(purchases) {
     const price = formatCurrency(item.UnitPrice);
 
     // Align price to far right of 40-character width
-    const line = `${name}${qty}`.padEnd(17, " ") + price.padStart(7, " ");
+    const trimmedName = name.length > 25 ? name.slice(0, 14) + "..." : name;
+    const line =
+      `${trimmedName}${qty}`.padEnd(1, " ") + price.padStart(12, " ");
+
+    //const line = `${name}${qty}`.padEnd(21, " ") + price.padStart(12, " ");
 
     html += `<pre>${line}</pre>`;
   });
@@ -135,7 +148,6 @@ function generateReceiptHTML(purchases) {
   html += `<div class="line"></div>`;
   html += `<div class="center"># ITEMS SOLD ${purchases.length}</div>`;
   html += `<div class="center barcode-container"><svg id="barcode"></svg></div>`;
-  html += `<div class="center">Low Prices You Can Trust. Every Day.</div>`;
   html += `<div class="center">${now.toLocaleDateString()}  ${now.toLocaleTimeString()}</div>`;
   html += `<div class="center">*** CUSTOMER COPY ***</div>`;
 
@@ -167,17 +179,16 @@ function consolidatePurchases(purchases) {
       };
     }
     consolidated[Item_Name].Quantity += Quantity;
-    consolidated[Item_Name].TotalCost = consolidated[Item_Name].Quantity * UnitPrice;
+    consolidated[Item_Name].TotalCost =
+      consolidated[Item_Name].Quantity * UnitPrice;
   });
 
   // Return as array
   return Object.values(consolidated);
 }
 
-
 $("#receipt").hide();
 function Print_Receipt() {
-
   $("#receipt").show();
   $("#Change_Items").show();
 
@@ -211,7 +222,6 @@ document.getElementById("continueShoppingBtn").onclick = function () {
 
 document.getElementById("pickWalletBtn").onclick = function () {
   location.reload();
-  
 };
 
 document.getElementById("saveImageBtn").onclick = function () {

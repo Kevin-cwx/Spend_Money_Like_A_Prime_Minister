@@ -38,9 +38,8 @@ for (let i = 0; i < JSON_PM.length; i++) {
   const index = i + 1;
   $(`#IDNamePrimeMinister_${index}`).text(JSON_PM[i].name);
   $(`#ImagePrimeMinister_${index}`).attr("src", JSON_PM[i].img_url);
-  $(`#WalletAmmount_${index}`).text(numberWithCommas(JSON_PM[i].wallet_amount));
+  $(`#WalletAmount_${index}`).text(numberWithCommas(JSON_PM[i].wallet_amount));
 }
-
 
 //
 //
@@ -57,10 +56,9 @@ SelectPM = (ID_Clicked) => {
   //   .children()
   //   .removeClass("TextWithinPMCard_LargeFont");
 
-
-  selectedPMIndex = ID_Clicked-1;
+  selectedPMIndex = ID_Clicked - 1;
   currentWalletAmount = JSON_PM[selectedPMIndex].wallet_amount;
-  PM_Name = JSON_PM[selectedPMIndex].name
+  PM_Name = JSON_PM[selectedPMIndex].name;
   PM_Face_Receipt = JSON_PM[selectedPMIndex].img_url;
   // Add classes to clicked PMCard and children
   $(`#PMCard_${ID_Clicked}`)
@@ -70,9 +68,15 @@ SelectPM = (ID_Clicked) => {
 
   // Update sticky header content
   $("#stickyPmFace").attr("src", JSON_PM[selectedPMIndex].img_url);
+  // $("#stickyWalletAmount").text(
+  //   numberWithCommas(JSON_PM[selectedPMIndex].wallet_amount)
+  // );
   $("#stickyWalletAmount").text(
-    numberWithCommas(JSON_PM[selectedPMIndex].wallet_amount)
+    numberWithCommas(
+      currentWalletAmount ?? JSON_PM[selectedPMIndex].wallet_amount
+    )
   );
+
   $("#stickyHeader").css("display", "flex");
 
   // Scroll smoothly to items section
@@ -85,7 +89,7 @@ SelectPM = (ID_Clicked) => {
 };
 
 var WalletAmmount = $("#WalletAmmount").text();
-var Original_WalletAmmount = $("#WalletAmmount").text();
+var Original_WalletAmmount = WalletAmmount;
 
 /* ItemCard */
 
@@ -95,8 +99,6 @@ function SelectAmmountBtn(InputID, MyValue) {
 }
 
 /* */
-
-
 
 $(document).ready(function () {
   $(".PMCard").click(function () {
@@ -108,17 +110,16 @@ $(document).ready(function () {
   });
 });
 
-
 //Scroll to top
 $(document).ready(function () {
-  const $btn = $('#scrollToTopBtn');
+  const $btn = $("#scrollToTopBtn");
 
   $(window).scroll(function () {
     const scrollTop = $(this).scrollTop();
     const docHeight = $(document).height();
     const winHeight = $(window).height();
 
-    if (scrollTop > (docHeight - winHeight) * 0.30) {
+    if (scrollTop > (docHeight - winHeight) * 0.3) {
       $btn.fadeIn();
     } else {
       $btn.fadeOut();
@@ -126,18 +127,15 @@ $(document).ready(function () {
   });
 
   $btn.click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 600);
+    $("html, body").animate({ scrollTop: 0 }, 600);
     return false;
   });
 });
-
 
 window.onload = function () {
   $("html, body").animate({ scrollTop: 0 }, "slow");
 };
 
-
 $("#Change_Items").on("click", function () {
   initializeItems("go");
 });
-

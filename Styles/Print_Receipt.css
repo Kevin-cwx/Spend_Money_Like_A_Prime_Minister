@@ -1,8 +1,8 @@
 #Print_Receipt {
     background-color: #3B82F6;
-    color: black;
+    color: white;
     padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -24,7 +24,7 @@
     padding: 20px;
     box-shadow: 0 0 5px #ccc;
     margin: 0 auto;
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; */
 }
 
 .center {
@@ -35,13 +35,14 @@
     display: flex;
     align-items: center;
     padding: 0;
+    margin: 0;
 }
 
 .PM_Face_Receipt {
     border-radius: 50%;
     border: 2px solid black;
     height: 50px;
-    
+    padding: 0;
     object-fit: cover;
     margin: 0;
     margin-left: 10px;
@@ -93,10 +94,6 @@
     padding: 2px 0;
 }
 
-.summary-label {
-    /* Left side */
-}
-
 .summary-value {
     /* Right align price values */
     text-align: right;
@@ -118,9 +115,6 @@
     padding: 2px 0;
 }
 
-.visa-label {
-    /* Left */
-}
 
 .visa-value {
     text-align: right;
@@ -130,7 +124,7 @@
 
 .store-logo {
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 0 auto;
     max-width: 150px;
     /* Adjust size as needed */
     height: auto;
@@ -157,11 +151,12 @@
 .modal-content {
     background-color: #2a2c2e;
     padding: 1.5rem;
+    padding-top: 0;
     border-radius: 8px;
     position: relative;
     text-align: center;
     max-width: 400px;
-    max-height: 90vh;
+    max-height: 95vh;
     overflow-y: auto;
     width: 90%;
     padding-bottom: 1.5rem;
@@ -172,15 +167,16 @@
     position: absolute;
     right: 12px;
     top: 10px;
-    font-size: 24px;
+    font-size: 40px;
     cursor: pointer;
     color: white;
+    
 }
 
 .modal-image-container img {
     max-width: 100%;
     height: auto;
-
+    padding: 20px;
 }
 
 .modal-buttons-row {
@@ -188,6 +184,12 @@
     justify-content: space-around;
     gap: 10px;
     margin-top: 1rem;
+   
+}
+
+.modal-buttons-row button,
+.modal-save-row button {
+  font-size: 1.02rem;
 }
 
 .modal-save-row {

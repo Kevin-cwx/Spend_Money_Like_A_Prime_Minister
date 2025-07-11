@@ -24,7 +24,6 @@ function initializeItems(a) {
                 <div class="BottomSelectAmmountBtn">
                     <button class="SelectAmmountBtn" type="button" onclick="selectAmountBtn(${i}, 5)">5</button>
                     <button class="SelectAmmountBtn" type="button" onclick="selectAmountBtn(${i}, 20)">20</button>
-                    <button class="SelectAmmountBtn" type="button" onclick="selectAmountBtn(${i}, 50)">50</button>
                     <button class="SelectAmmountBtn" type="button" onclick="selectAmountBtn(${i}, 100)">100</button>
                 </div>
             </div>
@@ -49,7 +48,7 @@ Arr_Purchases = [];
 // Buy item function
 function buyItem(itemIndex) {
   if (selectedPMIndex == null) {
-    showToast("Please select a Prime Minister first", "error");
+    showToast("Select a Prime Minister first", "error");
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return;
   }
@@ -113,7 +112,7 @@ function updateWalletDisplay() {
   const formatted = numberWithCommas(currentWalletAmount.toFixed(2));
 
   $("#stickyWalletAmount").text(formatted);
-  $(`#WalletAmmount_${selectedPMIndex + 1}`).text(formatted);
+  $(`#WalletAmount_${selectedPMIndex + 1}`).text(formatted);
 }
 
 // Block non numeric items from input field
