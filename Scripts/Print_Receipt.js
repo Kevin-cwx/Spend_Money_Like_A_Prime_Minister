@@ -32,6 +32,10 @@ var SuperMarketName = [
 var SuperMarketName = [""];
 
 const Slogan = [
+  "Deficit spending",
+  "Djis swipe e credit card di kompania",
+  "Mi ta gasta mas ku mi tin",  
+  "The economy is doing wonderfully",
   "Gasta sen, biba dushi",
   "4 Credit card den saku",
   "Bo tin debe solamente si bo tin intenshon di page",
@@ -213,8 +217,12 @@ function Print_Receipt() {
 
 // 🔥 Modal logic
 document.getElementById("closeModal").onclick = function () {
-  document.getElementById("receiptModal").classList.add("hidden");
+  $("#receiptModal").addClass("hidden");
+
+  document.getElementById("Advertisement_Modal_ID").classList.add("hidden");
+
 };
+
 
 document.getElementById("continueShoppingBtn").onclick = function () {
   document.getElementById("receiptModal").classList.add("hidden");
