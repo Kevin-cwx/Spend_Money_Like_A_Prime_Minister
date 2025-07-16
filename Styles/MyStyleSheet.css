@@ -3,10 +3,13 @@
 }
 
 body {
-  margin: 20px;
+ 
   background-color: rgb(6, 10, 22);
   color: white;
   font-family: "Ubuntu", sans-serif;
+}
+.MainWrapper{
+  
 }
 
 .MainWrapper > a {
@@ -17,6 +20,8 @@ body {
 }
 
 .ChoosePrimeMinisterCard {
+
+  
   border-radius: 20px;
   margin-top: 70px;
   padding: 1rem;
@@ -47,6 +52,8 @@ body {
     background-position: 0% 50%;
   }
 }
+
+
 
 .ChoosePrimeMinisterTitle {
   text-align: center;
