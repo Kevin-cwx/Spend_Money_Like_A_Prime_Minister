@@ -223,10 +223,11 @@ document.getElementById("closeModal").onclick = function () {
 
 };
 
-
-document.getElementById("continueShoppingBtn").onclick = function () {
+function Continue_Shopping() { 
   document.getElementById("receiptModal").classList.add("hidden");
-};
+
+}
+
 
 document.getElementById("pickWalletBtn").onclick = function () {
   location.reload();
