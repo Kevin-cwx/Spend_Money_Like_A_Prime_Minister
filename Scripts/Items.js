@@ -97,7 +97,7 @@ function buyItem(itemIndex) {
 function animateWalletDecrease(amount) {
   const startAmount = currentWalletAmount;
   const endAmount = currentWalletAmount - amount;
-  const duration = 1600;
+  const duration = 1400;
   const startTime = performance.now();
 
   function updateAmount(currentTime) {

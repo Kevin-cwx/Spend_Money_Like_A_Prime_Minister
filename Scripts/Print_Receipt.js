@@ -150,7 +150,7 @@ function generateReceiptHTML(purchases) {
   )}</div></div>`;
   html += `<pre>APPROVAL #: ${approvalCode}</pre>`;
   html += `<div class="line"></div>`;
-  html += `<div class="center"># ITEMS SOLD ${purchases.length}</div>`;
+  html += `<div class="center"># ITEMS Bought ${purchases.length}</div>`;
   html += `<div class="center barcode-container"><svg id="barcode"></svg></div>`;
   html += `<div class="center">${now.toLocaleDateString()}  ${now.toLocaleTimeString()}</div>`;
   html += `<div class="center">*** CUSTOMER COPY ***</div>`;

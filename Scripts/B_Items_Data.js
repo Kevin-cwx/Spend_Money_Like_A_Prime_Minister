@@ -77,7 +77,7 @@ var Items_JSON_B = [
   },
   {
     Item_Name: "Kobra salaris",
-    Item_Price: "17588",
+    Item_Price: "-17588",
     Img_Url:
       "https://www.usatoday.com/gcdn/-mm-/389f33b6050a2664d0a5c4c7964c4fab0747cd63/c=0-38-2024-1181/local/-/media/2015/10/26/USATODAY/USATODAY/635814567737908846-salary.jpg?width=2024&height=1143&fit=crop&format=pjpg",
   },
@@ -100,6 +100,12 @@ var Items_JSON_B = [
     Item_Price: "40",
     Img_Url:
       "https://www.liveabout.com/thmb/OaQxR6pBEuGf2VDU_dvTMuc6Lyg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-640274128-63af24066cfd4132b714d736651241ea.jpg",
+  },
+  {
+    Item_Name: "Bitcoin",
+    Item_Price: "117365.70",
+    Img_Url: 
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png",
   }
   
 ];
