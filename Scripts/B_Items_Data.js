@@ -41,7 +41,7 @@ var Items_JSON_B = [
   },
   {
     Item_Name: 'Led 100" 4K tv',
-    Item_Price: "",
+    Item_Price: "4856.99",
     Img_Url:
       "https://image.lg-informationdisplay.com/data/product/feature/2024/20240820/1724119012454_74813.jpg",
   },

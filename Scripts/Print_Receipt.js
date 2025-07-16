@@ -1,5 +1,5 @@
 function formatCurrency(amount) {
-  return "$" + amount.toFixed(2);
+  return "$" + amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 function getRandomTemplate() {
@@ -34,7 +34,7 @@ var SuperMarketName = [""];
 const Slogan = [
   "Deficit spending",
   "Djis swipe e credit card di kompania",
-  "Mi ta gasta mas ku mi tin",  
+  "Mi ta gasta mas ku mi tin",
   "The economy is doing wonderfully",
   "Gasta sen, biba dushi",
   "4 Credit card den saku",
@@ -65,7 +65,7 @@ const Slogan = [
   "Pichiri tot en met"
 ];
 
-// Helper function to pick random logo URL
+// Helper functions
 function getRandomLogoUrl() {
   const idx = Math.floor(Math.random() * logoUrls.length);
   return logoUrls[idx];
@@ -95,6 +95,7 @@ function generateReceiptHTML(purchases) {
   const subtotal = purchases.reduce((sum, item) => sum + item.TotalCost, 0);
   const tax = subtotal * taxRate;
   const total = subtotal + tax;
+
   const transactionID = Math.floor(Math.random() * 999999999);
   const approvalCode = Math.floor(100000 + Math.random() * 899999);
   const last4 = Math.floor(1000 + Math.random() * 8999);
@@ -115,39 +116,28 @@ function generateReceiptHTML(purchases) {
   html += `<div class="line"></div>`;
 
   purchases.forEach((item) => {
-    const nameLimit = 20; // adjust if needed
+    const nameLimit = 20;
     const name =
       item.Item_Name.length > nameLimit
         ? item.Item_Name.slice(0, nameLimit - 1) + "…"
         : item.Item_Name.padEnd(nameLimit, " ");
 
     const qty = String(item.Quantity).padStart(3, " ");
-    const price = formatCurrency(item.UnitPrice);
+    const price = formatCurrency(item.UnitPrice); // ✅ formatted with thousand separator
 
-    // Align price to far right of 40-character width
     const trimmedName = name.length > 25 ? name.slice(0, 14) + "..." : name;
     const line =
       `${trimmedName}${qty}`.padEnd(1, " ") + price.padStart(12, " ");
-
-    //const line = `${name}${qty}`.padEnd(21, " ") + price.padStart(12, " ");
 
     html += `<pre>${line}</pre>`;
   });
 
   html += `<div class="line"></div>`;
-  html += `<div class="summary-line"><div class="summary-label">SUBTOTAL:</div><div class="summary-value">${formatCurrency(
-    subtotal
-  )}</div></div>`;
-  html += `<div class="summary-line"><div class="summary-label">TAX (6.00%):</div><div class="summary-value">${formatCurrency(
-    tax
-  )}</div></div>`;
-  html += `<div class="summary-line"><div class="summary-label">TOTAL:</div><div class="summary-value">${formatCurrency(
-    total
-  )}</div></div>`;
+  html += `<div class="summary-line"><div class="summary-label">SUBTOTAL:</div><div class="summary-value">${formatCurrency(subtotal)}</div></div>`;
+  html += `<div class="summary-line"><div class="summary-label">TAX (6.00%):</div><div class="summary-value">${formatCurrency(tax)}</div></div>`;
+  html += `<div class="summary-line"><div class="summary-label">TOTAL:</div><div class="summary-value">${formatCurrency(total)}</div></div>`;
   html += `<div class="line"></div>`;
-  html += `<div class="visa-line"><div class="visa-label">VISA **** ${last4}</div><div class="visa-value">${formatCurrency(
-    total
-  )}</div></div>`;
+  html += `<div class="visa-line"><div class="visa-label">VISA **** ${last4}</div><div class="visa-value">${formatCurrency(total)}</div></div>`;
   html += `<pre>APPROVAL #: ${approvalCode}</pre>`;
   html += `<div class="line"></div>`;
   html += `<div class="center"># ITEMS Bought ${purchases.length}</div>`;
@@ -187,7 +177,6 @@ function consolidatePurchases(purchases) {
       consolidated[Item_Name].Quantity * UnitPrice;
   });
 
-  // Return as array
   return Object.values(consolidated);
 }
 
@@ -196,38 +185,32 @@ function Print_Receipt() {
   $("#receipt").show();
   $("#Change_Items").show();
 
-  //const txn = generateReceiptHTML(Arr_Purchases);
   const consolidatedPurchases = consolidatePurchases(Arr_Purchases);
   generateReceiptHTML(consolidatedPurchases);
+
   html2canvas(document.querySelector("#receipt"), {
-    backgroundColor: "#ffffff", // ✅ Set white background for image
+    backgroundColor: "#ffffff",
   }).then((canvas) => {
     const img = canvas.toDataURL("image/png");
 
-    // 🔥 Set image in modal
     $("#modalImageContainer").html(
       `<img id="receiptImage" src="${img}" alt="Receipt Image" />`
     );
 
-    // 🔥 Show modal
     $("#receiptModal").removeClass("hidden");
   });
+
   $("#receipt").hide();
 }
 
-// 🔥 Modal logic
 document.getElementById("closeModal").onclick = function () {
   $("#receiptModal").addClass("hidden");
-
   document.getElementById("Advertisement_Modal_ID").classList.add("hidden");
-
 };
 
-function Continue_Shopping() { 
+function Continue_Shopping() {
   document.getElementById("receiptModal").classList.add("hidden");
-
 }
-
 
 document.getElementById("pickWalletBtn").onclick = function () {
   location.reload();
