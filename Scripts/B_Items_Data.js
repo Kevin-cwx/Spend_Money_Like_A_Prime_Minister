@@ -11,6 +11,11 @@ var Items_JSON_B = [
       "https://t4.ftcdn.net/jpg/04/42/33/85/360_F_442338521_1QVCN2ZLgh0Ouzd8VtqzrE48AotKDICv.jpg",
   },
   {
+    Item_Name: "Movie Ticket - Djabierne Sambil",
+    Item_Price: "26",
+    Img_Url: "https://media.istockphoto.com/id/862687118/vector/two-red-cinema-vector-tickets.jpg?s=612x612&w=0&k=20&c=5OS4Ad61iZDBdZFjei4hH9ImPqSAlEyugE-iKCivvnM="
+  },
+  {
     Item_Name: "lolipop",
     Item_Price: "1",
     Img_Url:
@@ -91,6 +96,20 @@ var Items_JSON_B = [
     Item_Name: "Bai bankruta",
     get Item_Price() {
       return Get_Current_Wallet_Ammount();
+    },
+    Img_Url:
+      "https://i2.cdn.turner.com/money/2012/05/07/pf/bankruptcy-costs/bankruptcy.ju.top.jpg",
+  },
+  {
+    Item_Name: "Mc Wrap Combo",
+    Item_Price: "13.50",
+    Img_Url:
+      "https://images.deliveryhero.io/image/menu-import-gateway-prd/regions/AS/chains/mcd_pakistan/30c816e6b536c69d3acabcdac28ce070.png?width=%s",
+  },
+  {
+    Item_Name: "Gasta tur sen, pero sobra net 25.72 florin den bo potmoni",
+    get Item_Price() {
+      return Get_Current_Wallet_Ammount()-25.68;
     },
     Img_Url:
       "https://i2.cdn.turner.com/money/2012/05/07/pf/bankruptcy-costs/bankruptcy.ju.top.jpg",

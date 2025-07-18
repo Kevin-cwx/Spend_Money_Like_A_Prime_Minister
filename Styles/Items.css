@@ -15,10 +15,10 @@
     align-items: center;
 
     display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        /* Push content to bottom */
-        height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Push content to bottom */
+    height: 100%;
 }
 
 .ItemImage {
@@ -62,16 +62,16 @@
 }
 
 .BuyItemBtnClass:hover {
-    background:rgb(29, 85, 32);
+    background: rgb(29, 85, 32);
 }
 
 .ItemCountInputClass {
-    width:100%;
+    width: 100%;
     padding: 8px;
     border: 2px black solid;
     border-radius: 5px;
     font-size: 1.3rem;
-  
+
 }
 
 .ItemPriceClass {
@@ -95,3 +95,4 @@
     /* stack items vertically, optional */
     text-align: center;
 }
+

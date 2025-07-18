@@ -22,7 +22,7 @@ var Items_JSON = [
     },
     {
         Item_Name: "Movie Ticket - Djaluna Sambil",
-        Item_Price: "8",
+        Item_Price: "5",
         Img_Url: "https://media.istockphoto.com/id/862687118/vector/two-red-cinema-vector-tickets.jpg?s=612x612&w=0&k=20&c=5OS4Ad61iZDBdZFjei4hH9ImPqSAlEyugE-iKCivvnM="
     },
     {

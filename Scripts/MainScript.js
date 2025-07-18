@@ -141,3 +141,57 @@ window.onload = function () {
 $("#Change_Items").on("click", function () {
   initializeItems("go");
 });
+
+
+//
+function canRenderEmoji(emoji) {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  ctx.font = "32px Arial";
+  const baseline = ctx.measureText("a").width;
+  const emojiWidth = ctx.measureText(emoji).width;
+  return emojiWidth !== baseline;
+}
+
+
+function replaceUnsupportedEmoji(selector, emoji, fallback) {
+  const $el = $(selector);
+  if (canRenderEmoji(emoji)) {
+    $el.text(emoji);
+  } else {
+    $el.text(fallback);
+  }
+}
+
+$(document).ready(function () {
+  replaceUnsupportedEmoji("#Change_Items", "😈", ";-) Maluuu");
+  replaceUnsupportedEmoji("#Print_Receipt", "🧾 Print Resibu", "Print Resibu");
+});
+
+/// max value inn input
+$(document).ready(function () {
+  $(".ItemCountInputClass").on("input", function () {
+    const val = $(this).val();
+
+    // Only allow up to 3 digits (numbers only)
+    if (val.length > 3) {
+      $(this).val(val.slice(0, 3));
+    }
+  });
+
+  // Prevent typing non-numeric characters
+  $(".ItemCountInputClass").on("keypress", function (e) {
+    const char = String.fromCharCode(e.which);
+    if (!/[0-9]/.test(char)) {
+      e.preventDefault();
+    }
+  });
+
+  // Optional: prevent pasting longer or invalid values
+  // $(".ItemCountInputClass").on("paste", function (e) {
+  //   const paste = (e.originalEvent || e).clipboardData.getData('text');
+  //   if (!/^\d{1,3}$/.test(paste)) {
+  //     e.preventDefault();
+  //   }
+  // });
+});

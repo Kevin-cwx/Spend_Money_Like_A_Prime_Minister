@@ -189,10 +189,12 @@ body {
   display: inline-flex;
   height: min-content;
   display: none;
+  cursor: pointer;
 }
 
 #Change_Items:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
+  background: rgb(137, 245, 253);
 }
 
 img {
