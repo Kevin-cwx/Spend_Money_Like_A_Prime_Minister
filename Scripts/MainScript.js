@@ -48,7 +48,7 @@ var currentWalletAmount;
 var PM_Name;
 var PM_Face_Receipt;
 SelectPM = (ID_Clicked) => {
-  log("PM_Card_Clicked: " + ID_Clicked);
+  //log("PM_Card_Clicked: " + ID_Clicked);
 
   // Remove classes from all PMCards and their children
   // $(".PMCard")
@@ -96,7 +96,7 @@ var Original_WalletAmmount = WalletAmmount;
 /* ItemCard */
 
 function SelectAmmountBtn(InputID, MyValue) {
-  log("InputID: " + InputID + " " + "Value: " + MyValue);
+  //log("InputID: " + InputID + " " + "Value: " + MyValue);
   $("#ItemCountInput_" + InputID).val(MyValue);
 }
 

@@ -2,14 +2,13 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 0px 30px;
-    padding-top: 0px;
+    padding: 0px 20px
 }
 
 .ItemCard {
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     align-items: center;
@@ -96,3 +95,16 @@
     text-align: center;
 }
 
+
+@media (max-width: 768px) {
+    .ParentItemCard {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 items per row */
+        grid-auto-rows: auto;
+    }
+
+    .ItemCard {
+        min-height: 250px;
+        /* ensure a decent size for stacking vertically */
+    }
+}

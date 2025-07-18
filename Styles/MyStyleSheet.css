@@ -7,10 +7,9 @@ body {
   background-color: rgb(6, 10, 22);
   color: white;
   font-family: "Ubuntu", sans-serif;
+ 
 }
-.MainWrapper{
-  
-}
+
 
 .MainWrapper > a {
   display: block;
