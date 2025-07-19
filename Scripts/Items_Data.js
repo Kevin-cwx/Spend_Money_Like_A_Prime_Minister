@@ -161,7 +161,7 @@ var Items_JSON = [
         Img_Url: "https://media.cntraveler.com/photos/675375966ce4439b0881d86f/3:2/w_2560%2Cc_limit/2Z9A8039.jpg"
     },
     {
-        Item_Name: "Nobu Dinner for 3 - No tip",
+        Item_Name: "Nobu Dinner for 3",
         Item_Price: "484.78",
         Img_Url: "https://media.timeout.com/images/106013717/750/422/image.jpg"
     },

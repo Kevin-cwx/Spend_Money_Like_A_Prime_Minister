@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+
 }
 
 body {
@@ -7,7 +7,8 @@ body {
   background-color: rgb(6, 10, 22);
   color: white;
   font-family: "Ubuntu", sans-serif;
- 
+  padding: 0%;
+  margin: 0;
 }
 
 
@@ -109,9 +110,10 @@ body {
 }
 
 .PrimeMinisterFaceCard {
+  aspect-ratio: 1 / 1;
   max-width: 100%;
-  /* ensures it never overflows */
-  height: auto;
+  /* height: auto; */
+  height: 250px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid black;

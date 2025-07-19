@@ -16,8 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* Push content to bottom */
-    height: 100%;
+    /* height: 100%; */
 }
 
 .ItemImage {
@@ -65,11 +64,13 @@
 }
 
 .ItemCountInputClass {
-    width: 100%;
+    width: 90%;
     padding: 8px;
     border: 2px black solid;
     border-radius: 5px;
     font-size: 1.3rem;
+    display: block;
+    margin: 10px auto;
 
 }
 
@@ -87,11 +88,8 @@
 .FirstChildItemcard {
     display: flex;
     justify-content: center;
-    /* horizontal center */
     align-items: center;
-    /* vertical center */
     flex-direction: column;
-    /* stack items vertically, optional */
     text-align: center;
 }
 
@@ -99,12 +97,32 @@
 @media (max-width: 768px) {
     .ParentItemCard {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 items per row */
         grid-auto-rows: auto;
+        padding: 0px;
     }
 
     .ItemCard {
         min-height: 250px;
-        /* ensure a decent size for stacking vertically */
+        padding: 10px 0px;
+        margin: 0px;
     }
+
+    .ChoosePrimeMinisterCard {
+        width: 100%;
+    }
+
+    .PMCard {
+        width: 160px;
+    }
+
+    .PrimeMinisterFaceCard {
+        height: 150px;
+    }
+
+    .sticky-currency {
+        font-size: 1.5em;
+    }
+
+    
+
 }

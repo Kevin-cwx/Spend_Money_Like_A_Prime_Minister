@@ -1,5 +1,5 @@
-.Advertisement_Modal{
-display: flex;
+.Advertisement_Modal {
+    display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;

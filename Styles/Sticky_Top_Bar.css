@@ -18,18 +18,19 @@
     /* width: 70px; */
     height: 70px;
     border-radius: 50%;
+    border: 2px solid black;
     margin-right: 10px;
     object-fit: cover;
 }
 
 .sticky-currency {
     font-size: 2.5em;
-        font-weight: bold;
-        font-family: monospace;
-        /* Prevents character width changes */
-        min-width: 9ch;
-        /* Adjust based on max digits, e.g., 9 characters wide */
-        text-align: right;
-        /* Keeps numbers aligned to the right */
-        display: inline-block;
+    font-weight: bold;
+    font-family: monospace;
+    /* Prevents character width changes */
+    min-width: 9ch;
+    /* Adjust based on max digits, e.g., 9 characters wide */
+    text-align: right;
+    /* Keeps numbers aligned to the right */
+    display: inline-block;
 }
