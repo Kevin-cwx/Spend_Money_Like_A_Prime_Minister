@@ -61,7 +61,7 @@ Arr_Purchases = [];
 // Buy item function
 function buyItem(itemIndex) {
   if (selectedPMIndex == null) {
-    showToast("Select a Prime Minister first", "error");
+    showToast("Select a Prime Minister", "error");
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return;
   }
