@@ -65,11 +65,17 @@ function buyItem(itemIndex) {
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return;
   }
-
   const inputSelector = "#ItemCountInput_" + itemIndex;
   const quantityVal = $(inputSelector).val();
 
   const quantity = parseInt(quantityVal, 10);
+
+  if (quantity == null || quantity <= 0 || quantity == '' || isNaN(quantity)) {
+    showToast("Please enter a valid quantity", "error");
+    return;
+  }
+
+  
 
   // // Highlighted Fix: check if quantity is a valid number and positive
   // if (isNaN(quantity) || quantity <= 0) {

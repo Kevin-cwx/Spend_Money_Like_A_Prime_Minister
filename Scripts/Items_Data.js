@@ -88,7 +88,7 @@ var Items_JSON = [
     {
         Item_Name: "Rolex - Sky-Dweller. Oyster, 42 mm, Oystersteel and white gold",
         Item_Price: "16600.00",
-        Img_Url: "https://diamondsourcenyc.com/cdn/shop/files/2024-Release-Rolex-Sky-Dweller-42mm-Watch-336935.jpg?v=1715202798"
+        Img_Url: "https://watchmydiamonds.com/wp-content/uploads/2024/04/rolex-sky-dweller-336933-0004.webp"
     },
     {
         Item_Name: "calatrava patek philippe",
@@ -225,4 +225,36 @@ var Items_JSON = [
         Item_Price: "0.10",
         Img_Url: "https://149719686.v2.pressablecdn.com/wp-content/uploads/2024/08/10c-CBCS-18.25mm-Interrupted-REV-FQ.png.webp"
     },
+    {
+        Item_Name: "Serbes heineken",
+        Item_Price: "5.15",
+        Img_Url: "https://cdn.shoplightspeed.com/shops/643780/files/37366797/1652x1652x1/heineken-heineken.jpg"
+    },
+    {
+        "Item_Name": "Apple - Iphone 17 Pro, 256GB - Cosmic Orange",
+        "Item_Price": "1605.14",
+        "Img_Url": "https://boolchand.com/temp-images/products-electronics/Thumbs/264397.jpg"
+    },
+    {
+        "Item_Name": "Apple - Iphone 17, 256GB - Black",
+        "Item_Price": "1199.43",
+        "Img_Url": "https://boolchand.com/temp-images/products-electronics/Thumbs/264271.jpg"
+    },
+    {
+        "Item_Name": "Apple - iTunes Gift Card, US$ 50.00",
+        "Item_Price": "50",
+        "Img_Url": "https://boolchand.com/temp-images/products-electronics/Thumbs/199628.jpg"
+    },
+    {
+        "Item_Name": "Cons Fitness Gym membership",
+        "Item_Price": "100",
+        "Img_Url": "https://encrypted-tbn0.gstatic.com/images?q=tbn: ANd9GcTQWVaWqpg2igG73PdgvFGzYJhCg5TZpf5mAw & s"
+    }
 ];
+
+
+// {
+//     Item_Name: "",
+//         Item_Price: "",
+//             Img_Url: ""
+// },

@@ -30,7 +30,7 @@ var Items_JSON_B = [
   {
     Item_Name: "Lavish Grape",
     Item_Price: "4",
-    Img_Url: "https://www.liquorstore-online.com/product_images/p_55254.jpg",
+    Img_Url: "https://cdn11.bigcommerce.com/s-0ddlsmhg83/images/stencil/836x836/products/7971/8226/lavish-grape-vodka-cocktail__20580.1752496638.1280.1280__19026.1755242990.jpg?c=1",
   },
   {
     Item_Name: "Lavish Classic",
@@ -84,7 +84,7 @@ var Items_JSON_B = [
     Item_Name: "Kobra salaris",
     Item_Price: "-17588",
     Img_Url:
-      "https://www.usatoday.com/gcdn/-mm-/389f33b6050a2664d0a5c4c7964c4fab0747cd63/c=0-38-2024-1181/local/-/media/2015/10/26/USATODAY/USATODAY/635814567737908846-salary.jpg?width=2024&height=1143&fit=crop&format=pjpg",
+      "https://s.yimg.com/ny/api/res/1.2/6bQZBhLo6cXRSCyg8L6jUA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04NjM-/https://media.zenfs.com/en/24_7_wall_st_aol_articles_169/7f069e27c588f422b40b633cf697264c",
   },
   {
     Item_Name: "Tayo di auto",
