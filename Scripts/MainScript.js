@@ -59,8 +59,15 @@ SelectPM = (ID_Clicked) => {
   //   .removeClass("TextWithinPMCard_LargeFont");
 
   selectedPMIndex = ID_Clicked - 1;
-  currentWalletAmount = JSON_PM[selectedPMIndex].wallet_amount; 
   PM_Name = JSON_PM[selectedPMIndex].name;
+
+  if (lastWalletAmounts.hasOwnProperty(PM_Name)) {
+    currentWalletAmount = lastWalletAmounts[PM_Name];
+  } else {
+    currentWalletAmount = JSON_PM[selectedPMIndex].wallet_amount;
+    lastWalletAmounts[PM_Name] = currentWalletAmount;
+  }
+
   PM_Face_Receipt = JSON_PM[selectedPMIndex].img_url;
   // Add classes to clicked PMCard and children
   $(`#PMCard_${ID_Clicked}`)
@@ -70,14 +77,14 @@ SelectPM = (ID_Clicked) => {
 
   // Update sticky header content
   $("#stickyPmFace").attr("src", JSON_PM[selectedPMIndex].img_url);
-  // $("#stickyWalletAmount").text(
-  //   numberWithCommas(JSON_PM[selectedPMIndex].wallet_amount)
-  // );
-  $("#stickyWalletAmount").text(
-    numberWithCommas(
-      currentWalletAmount ?? JSON_PM[selectedPMIndex].wallet_amount
-    )
-  );
+
+  // Format the amount to 2 decimal places
+  let formattedAmount = numberWithCommas(parseFloat(currentWalletAmount).toFixed(2));
+
+  $("#stickyWalletAmount").text(formattedAmount);
+
+  // Ensure the card also reflects the current amount (syncs sticky and card)
+  $(`#WalletAmount_${ID_Clicked}`).text(formattedAmount);
 
   $("#stickyHeader").css("display", "flex");
 
@@ -88,8 +95,6 @@ SelectPM = (ID_Clicked) => {
     },
     500
   );
-
-  
 };
 
 var WalletAmmount = $("#WalletAmmount").text();

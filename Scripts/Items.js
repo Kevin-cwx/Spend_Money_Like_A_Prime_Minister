@@ -14,7 +14,7 @@ function initializeItems(a) {
     Items_JSON.sort(
       (a, b) => parseFloat(a.Item_Price) - parseFloat(b.Item_Price)
     );
-    
+
   } else {
     shuffleArray(Items_JSON);
   }
@@ -45,7 +45,7 @@ function initializeItems(a) {
     $("#ItemName_" + i).text(Items_JSON[i]["Item_Name"]);
     $("#ItemPrice_" + i).text(
       "XCG " +
-        numberWithCommas(parseFloat(Items_JSON[i]["Item_Price"]).toFixed(2))
+      numberWithCommas(parseFloat(Items_JSON[i]["Item_Price"]).toFixed(2))
     );
     $("#ItemImageID_" + i).attr("src", Items_JSON[i]["Img_Url"]);
   }
@@ -75,7 +75,7 @@ function buyItem(itemIndex) {
     return;
   }
 
-  
+
 
   // // Highlighted Fix: check if quantity is a valid number and positive
   // if (isNaN(quantity) || quantity <= 0) {
@@ -102,7 +102,7 @@ function buyItem(itemIndex) {
 // Animate wallet decrease
 function animateWalletDecrease(amount) {
   const startAmount = currentWalletAmount;
-  const endAmount = currentWalletAmount - amount;
+  const endAmount = parseFloat((currentWalletAmount - amount).toFixed(2)); // Ensure precision
   const duration = 1400;
   const startTime = performance.now();
 
@@ -132,6 +132,11 @@ function updateWalletDisplay() {
 
   $("#stickyWalletAmount").text(formatted);
   $(`#WalletAmount_${selectedPMIndex + 1}`).text(formatted);
+
+  // Update the global lastWalletAmounts to persist the change
+  if (typeof PM_Name !== 'undefined' && typeof lastWalletAmounts !== 'undefined') {
+    lastWalletAmounts[PM_Name] = currentWalletAmount;
+  }
 }
 
 // Block non numeric items from input field
