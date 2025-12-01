@@ -47,6 +47,8 @@ for (let i = 0; i < JSON_PM.length; i++) {
 var currentWalletAmount;
 var PM_Name;
 var PM_Face_Receipt;
+var lastWalletAmounts = {};
+
 SelectPM = (ID_Clicked) => {
   //log("PM_Card_Clicked: " + ID_Clicked);
 
@@ -57,7 +59,7 @@ SelectPM = (ID_Clicked) => {
   //   .removeClass("TextWithinPMCard_LargeFont");
 
   selectedPMIndex = ID_Clicked - 1;
-  currentWalletAmount = JSON_PM[selectedPMIndex].wallet_amount;
+  currentWalletAmount = JSON_PM[selectedPMIndex].wallet_amount; 
   PM_Name = JSON_PM[selectedPMIndex].name;
   PM_Face_Receipt = JSON_PM[selectedPMIndex].img_url;
   // Add classes to clicked PMCard and children
@@ -98,7 +100,21 @@ var Original_WalletAmmount = WalletAmmount;
 function SelectAmmountBtn(InputID, MyValue) {
   //log("InputID: " + InputID + " " + "Value: " + MyValue);
   $("#ItemCountInput_" + InputID).val(MyValue);
+
+  // Update the wallet amount based on item selection
+  // Example: assume each item reduces the wallet by MyValue
+  if (PM_Name) {
+    // Adjust currentWalletAmount (you can modify the logic if needed)
+    currentWalletAmount -= MyValue;
+
+    // Update lastWalletAmounts for this PM
+    lastWalletAmounts[PM_Name] = currentWalletAmount;
+
+    // Update sticky header display
+    $("#stickyWalletAmount").text(numberWithCommas(currentWalletAmount));
+  }
 }
+
 
 /* */
 
